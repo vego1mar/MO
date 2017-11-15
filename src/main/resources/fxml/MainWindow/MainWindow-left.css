@@ -1,0 +1,8 @@
+.accordion {
+  -fx-border-color: gray;
+  -fx-border-style: dotted;
+  -fx-border-width: 1;
+
+  -fx-font-family: normal;
+  -fx-font-size: 12;
+}
