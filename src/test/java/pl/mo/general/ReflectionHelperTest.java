@@ -6,15 +6,15 @@ import org.junit.Test;
 public class ReflectionHelperTest {
 
     @Test
-    public void shouldReturnMethodNamesFromScopesWithinItExecutes() {
+    public void getCurrentMethodNameTest() {
         // when
         String thisMethodName = ReflectionHelper.getCurrentMethodName();
         String innerScopeMethodName = runTheHelperMethodForProvidingTheInnerScope();
 
         // then
-        Assert.assertEquals("shouldReturnMethodNamesFromScopesWithinItExecutes", thisMethodName);
+        Assert.assertEquals("getCurrentMethodNameTest", thisMethodName);
         Assert.assertEquals("runTheHelperMethodForProvidingTheInnerScope", innerScopeMethodName);
-        Assert.assertEquals("shouldReturnMethodNamesFromScopesWithinItExecutes", ReflectionHelper.getCurrentMethodName());
+        Assert.assertEquals("getCurrentMethodNameTest", ReflectionHelper.getCurrentMethodName());
     }
 
     private String runTheHelperMethodForProvidingTheInnerScope() {

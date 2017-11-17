@@ -1,121 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="460.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.mo.window.MainWindowController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Program">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <HBox prefHeight="28.0" prefWidth="1200.0" stylesheets="@MainWindow-bottom.css" BorderPane.alignment="CENTER">
-         <children>
-            <Label contentDisplay="CENTER" maxWidth="212.0" minWidth="212.0" prefHeight="28.0" prefWidth="212.0" text="Counter" textAlignment="CENTER" textOverrun="CLIP">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="statusBarInfo" prefHeight="113.0" prefWidth="1041.0" text="Status info">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </Label>
-         </children>
-      </HBox>
-   </bottom>
+<BorderPane prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.mo.window.MainWindowController">
    <opaqueInsets>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </opaqueInsets>
-   <right>
-      <Accordion prefHeight="406.0" prefWidth="304.0" stylesheets="@MainWindow-right.css" BorderPane.alignment="CENTER">
-        <panes>
-          <TitledPane animated="false" text="Overview">
-            </TitledPane>
-          <TitledPane animated="false" text="Code">
-            </TitledPane>
-        </panes>
-      </Accordion>
-   </right>
-   <left>
-      <Accordion maxWidth="212.0" minWidth="212.0" prefHeight="587.0" prefWidth="212.0" stylesheets="@MainWindow-left.css" BorderPane.alignment="CENTER">
-        <panes>
-          <TitledPane animated="false" text="Grid Search">
-            </TitledPane>
-          <TitledPane animated="false" text="Grid Search (recursive)">
-            </TitledPane>
-        </panes>
-      </Accordion>
-   </left>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@MainWindow-center.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab closable="false" text="Grid Search">
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <HBox alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="585.0">
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" vmax="100.0">
+                     <content>
+                        <VBox prefHeight="567.0" prefWidth="368.0">
                            <children>
-                              <Label alignment="CENTER_RIGHT" text="Lower limit (left x):" />
-                              <Region prefHeight="40.0" prefWidth="28.0" />
-                              <TextField fx:id="gsLeftArgument" promptText="1" text="1" />
+                              <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Lower limit (left x):" />
+                                    <Region prefHeight="40.0" prefWidth="28.0" />
+                                    <TextField fx:id="gsLeftArgument" promptText="1" text="1" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Upper limit (right x):" />
+                                    <Region prefHeight="40.0" prefWidth="19.0" />
+                                    <TextField fx:id="gsRightArgument" promptText="10" text="10" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Step (accuracy Ɛ):" />
+                                    <Region prefHeight="40.0" prefWidth="34.0" />
+                                    <TextField fx:id="gsAccuracy" promptText="0.001" text="0.001" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Result:" />
+                                    <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="91.0" />
+                                    <TextField fx:id="gsLocalMinimum" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Number of calls:" />
+                                    <Region prefHeight="40.0" prefWidth="40.0" />
+                                    <TextField fx:id="gsNumberOfCalls" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="574.0">
+                                 <children>
+                                    <Region prefHeight="40.0" prefWidth="138.0" />
+                                    <Button mnemonicParsing="false" onAction="#countUserDefinedLocalMinimum" text="Count local minimum" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                              <HBox layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="285.0" prefWidth="368.0">
+                                 <children>
+                                    <LineChart fx:id="gsFunctionChart">
+                                      <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="900.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                              <HBox layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="285.0" prefWidth="368.0">
+                                 <children>
+                                    <BarChart fx:id="gsDependencyChart">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
                            </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="585.0">
-                           <children>
-                              <Label alignment="CENTER_RIGHT" text="Upper limit (right x):" />
-                              <Region prefHeight="40.0" prefWidth="19.0" />
-                              <TextField fx:id="gsRightArgument" promptText="10" text="10" />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="50.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="585.0">
-                           <children>
-                              <Label alignment="CENTER_RIGHT" text="Step (accuracy Ɛ):" />
-                              <Region prefHeight="40.0" prefWidth="34.0" />
-                              <TextField fx:id="gsAccuracy" promptText="0.001" text="0.001" />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="585.0">
-                           <children>
-                              <Label alignment="CENTER_RIGHT" text="Result:" />
-                              <Region prefHeight="40.0" prefWidth="91.0" />
-                              <TextField fx:id="gsLocalMinimum" editable="false" />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="585.0">
-                           <children>
-                              <Region prefHeight="40.0" prefWidth="143.0" />
-                              <Button mnemonicParsing="false" onAction="#countUserDefinedLocalMinimum" text="Count local minimum" />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                     </children>
-                  </VBox>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
                </content></Tab>
-          <Tab closable="false" text="Grid Search (recursive)" />
         </tabs>
       </TabPane>
    </center>

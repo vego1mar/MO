@@ -6,9 +6,11 @@ import java.util.List;
 public class GridSearch {
 
     private List<Double> polynomialCoefficients;
+    private long numberOfCalls;
 
     public GridSearch() {
         polynomialCoefficients = Arrays.asList(1.0, -3.0, -15.0, 5.0);
+        numberOfCalls = 0;
     }
 
     public double getPolynomialValue(double argument) {
@@ -19,6 +21,7 @@ public class GridSearch {
             value += polynomialCoefficients.get(i) * Math.pow(argument, Double.valueOf(polynomialCoefficients.size()) - (i + 1));
         }
 
+        numberOfCalls++;
         return value + polynomialCoefficients.get(i);
     }
 
@@ -32,6 +35,10 @@ public class GridSearch {
         }
 
         return null;
+    }
+
+    public long getNumberOfCalls() {
+        return numberOfCalls;
     }
 
 }

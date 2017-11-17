@@ -10,7 +10,7 @@ public class PrimitivesParserTest {
     private static final double IBM_FLOAT_SURROUNDING = 5.96E-8;
 
     @Test
-    public void shouldParseFloatingPointValues() {
+    public void getDoubleTest() {
         // when
         Double value1 = PrimitivesParser.getDouble("-12.34");
         String string1 = PrimitivesParser.getErrorMessage();
@@ -29,7 +29,7 @@ public class PrimitivesParserTest {
     }
 
     @Test
-    public void shouldReturnErrorMessages() {
+    public void getErrorMessageTest() {
         // when
         Double value1 = PrimitivesParser.getDouble("0,23");
         String string1 = PrimitivesParser.getErrorMessage();
