@@ -25,8 +25,15 @@ public class MainWindowController {
     @FXML private LineChart<Double, Double> gsFunctionChart;
     @FXML private BarChart<Double, Double> gsDependencyChart;
 
+//    @FXML private TextField recgsLeftArgument;
+//    @FXML private TextField recgsRightArgument;
+//    @FXML private TextField recgsAccuracy;
+//    @FXML private TextField recgsLocalMinimum;
+//    @FXML private TextField recgsNumberOfCalls;
+//    @FXML private LineChart<Double, Double> recgsFunctionChart;
+
     @FXML
-    private void countUserDefinedLocalMinimum() {
+    private void countUserDefinedGridSearchLocalMinimum() {
         Double leftArgument = PrimitivesParser.getDouble(gsLeftArgument.getText());
         Double rightArgument = PrimitivesParser.getDouble(gsRightArgument.getText());
         Double accuracy = PrimitivesParser.getDouble(gsAccuracy.getText());

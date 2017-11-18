@@ -1,6 +1,8 @@
 package pl.mo.gs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class GridSearch {
@@ -18,7 +20,7 @@ public class GridSearch {
         int i;
 
         for (i = 0; i < polynomialCoefficients.size() - 1; i++) {
-            value += polynomialCoefficients.get(i) * Math.pow(argument, Double.valueOf(polynomialCoefficients.size()) - (i + 1));
+            value += polynomialCoefficients.get(i) * Math.pow(argument, (double) polynomialCoefficients.size() - (i + 1));
         }
 
         numberOfCalls++;
@@ -39,6 +41,32 @@ public class GridSearch {
 
     public long getNumberOfCalls() {
         return numberOfCalls;
+    }
+
+    /**
+     * @throws java.util.NoSuchElementException when 'left' > 'right'
+     * @throws IllegalArgumentException when 'delta' <= 0
+     */
+    public double getLocalMinimumArgument(double left, double right, double epsilon, int delta) {
+        if (delta <= 0) {
+            throw new IllegalArgumentException("Argument 'delta' must be greater than zero.");
+        }
+
+        if (Math.abs(right - left) <= Math.abs(epsilon)) {
+            return left;
+        }
+
+        List<Double> arguments = new ArrayList<>();
+        List<Double> values = new ArrayList<>();
+        final Double step = (right - left) / delta;
+
+        for (double i = left; i <= right; i += step) {
+            double argument = getLocalMinimumArgument(i, i + step, Math.abs(epsilon), delta);
+            arguments.add(argument);
+            values.add(getPolynomialValue(argument));
+        }
+
+        return arguments.get(values.indexOf(Collections.min(values)));
     }
 
 }
