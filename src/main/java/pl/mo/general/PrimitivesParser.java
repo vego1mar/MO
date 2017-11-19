@@ -31,4 +31,18 @@ public class PrimitivesParser {
         return result;
     }
 
+    public static Integer getInteger(String text) {
+        Integer result = null;
+        errorMessage = null;
+
+        try {
+            result = Integer.parseInt(text);
+        } catch (NullPointerException | NumberFormatException ex) {
+            errorMessage = ex.getMessage();
+            log.error(ex.getMessage());
+        }
+
+        return result;
+    }
+
 }

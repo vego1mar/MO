@@ -54,10 +54,18 @@ public class GridSearchTest {
         object = new GridSearch();
         object.getLocalMinimumArgument(1.0, 10.0, 0.0001);
         long no2 = object.getNumberOfCalls();
+        object = new GridSearch();
+        object.getLocalMinimumArgument(1.0, 10.0, 0.001, 10);
+        long no3 = object.getNumberOfCalls();
+        object = new GridSearch();
+        object.getLocalMinimumArgument(1.0, 10.0, 0.001, 100);
+        long no4 = object.getNumberOfCalls();
 
         // then
         Assert.assertEquals(4_900, no1);
         Assert.assertEquals(48_992, no2);
+        Assert.assertEquals(13_347, no3);
+        Assert.assertEquals(10_280, no4);
     }
 
     @Test(timeout = 1000)

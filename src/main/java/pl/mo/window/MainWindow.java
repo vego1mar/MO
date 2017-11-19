@@ -15,6 +15,8 @@ public class MainWindow extends Application {
     private static final Logger log = Logger.getLogger(MainWindow.class);
 
     public static void main(String[] args) {
+        log.debug("Application started.");
+
         try {
             launch(args);
         } catch (RuntimeException ex) {

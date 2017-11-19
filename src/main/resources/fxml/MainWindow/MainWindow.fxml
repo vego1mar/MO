@@ -156,6 +156,16 @@
                                     <Insets />
                                  </opaqueInsets>
                               </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="170.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Interval divisions:" />
+                                    <Region prefHeight="40.0" prefWidth="35.0" />
+                                    <TextField fx:id="recgsIntervalDivisions" promptText="10" text="10" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
                                  <children>
                                     <Label alignment="CENTER_RIGHT" text="Result:" />
@@ -179,7 +189,7 @@
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="574.0">
                                  <children>
                                     <Region prefHeight="40.0" prefWidth="138.0" />
-                                    <Button mnemonicParsing="false" text="Count local minimum" />
+                                    <Button mnemonicParsing="false" onAction="#countUserDefinedRecursiveGridSearchLocalMinimum" text="Count local minimum" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />

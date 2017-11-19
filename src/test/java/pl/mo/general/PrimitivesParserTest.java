@@ -1,6 +1,9 @@
 package pl.mo.general;
 
 import static org.hamcrest.Matchers.closeTo;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.ArgumentMatchers.anyInt;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -36,12 +39,39 @@ public class PrimitivesParserTest {
         PrimitivesParser.getDouble("0.0");
         Double value2 = PrimitivesParser.getDouble("0xABC");
         String string2 = PrimitivesParser.getErrorMessage();
+        Integer value3 = PrimitivesParser.getInteger("0.0");
+        String string3 = PrimitivesParser.getErrorMessage();
+        Integer value4 = PrimitivesParser.getInteger(null);
+        String string4 = PrimitivesParser.getErrorMessage();
 
         // then
         Assert.assertNull(value1);
         Assert.assertNotNull(string1);
         Assert.assertNull(value2);
         Assert.assertNotNull(string2);
+        Assert.assertNull(value3);
+        Assert.assertNotNull(string3);
+        Assert.assertNull(value4);
+        Assert.assertNotNull(string4);
+    }
+
+    @Test
+    public void getIntegerTest() {
+        // when
+        Integer value1 = PrimitivesParser.getInteger("-23");
+        String string1 = PrimitivesParser.getErrorMessage();
+        Integer value2 = PrimitivesParser.getInteger("0");
+        String string2 = PrimitivesParser.getErrorMessage();
+        Integer value3 = PrimitivesParser.getInteger(String.valueOf(Math.abs(anyInt())));
+        String string3 = PrimitivesParser.getErrorMessage();
+
+        // then
+        Assert.assertThat(value1, is(-23));
+        Assert.assertNull(string1);
+        Assert.assertThat(value2, is(0));
+        Assert.assertNull(string2);
+        Assert.assertThat(value3, instanceOf(Integer.class));
+        Assert.assertNull(string3);
     }
 
 }

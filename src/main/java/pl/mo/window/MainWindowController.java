@@ -1,5 +1,6 @@
 package pl.mo.window;
 
+import java.util.NoSuchElementException;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
@@ -25,12 +26,13 @@ public class MainWindowController {
     @FXML private LineChart<Double, Double> gsFunctionChart;
     @FXML private BarChart<Double, Double> gsDependencyChart;
 
-//    @FXML private TextField recgsLeftArgument;
-//    @FXML private TextField recgsRightArgument;
-//    @FXML private TextField recgsAccuracy;
-//    @FXML private TextField recgsLocalMinimum;
-//    @FXML private TextField recgsNumberOfCalls;
-//    @FXML private LineChart<Double, Double> recgsFunctionChart;
+    @FXML private TextField recgsLeftArgument;
+    @FXML private TextField recgsRightArgument;
+    @FXML private TextField recgsAccuracy;
+    @FXML private TextField recgsIntervalDivisions;
+    @FXML private TextField recgsLocalMinimum;
+    @FXML private TextField recgsNumberOfCalls;
+    @FXML private LineChart<Double, Double> recgsFunctionChart;
 
     @FXML
     private void countUserDefinedGridSearchLocalMinimum() {
@@ -55,11 +57,11 @@ public class MainWindowController {
         gsLocalMinimum.setText(localMinimum.toString());
         gsNumberOfCalls.setText(String.valueOf(gridSearch.getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument);
+        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart);
     }
 
     @FXML
-    private void populateFunctionChart(Double left, Double right) {
+    private void populateFunctionChart(Double left, Double right, LineChart<Double, Double> lineChart) {
         GridSearch gridSearch = new GridSearch();
         Series series = new Series();
         final int POINTS_PER_INTERVAL = 11;
@@ -69,16 +71,16 @@ public class MainWindowController {
             series.getData().add(new Data<>(i, gridSearch.getPolynomialValue(i)));
         }
 
-        gsFunctionChart.getData().clear();
-        gsFunctionChart.getData().addAll(series);
-        log.info(ReflectionHelper.getCurrentMethodName() + "(" + left + ", " + right + ")");
+        lineChart.getData().clear();
+        lineChart.getData().addAll(series);
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + left + ", " + right + ", " + lineChart.getId() + ")");
     }
 
-    private void setFunctionChartDefaultSettings() {
-        gsFunctionChart.getXAxis().setAutoRanging(true);
-        gsFunctionChart.getYAxis().setAutoRanging(true);
-        gsFunctionChart.setLegendVisible(false);
-        gsFunctionChart.setTitle("The provided function in a specified interval");
+    private void setFunctionChartDefaultSettings(LineChart<Double, Double> lineChart) {
+        lineChart.getXAxis().setAutoRanging(true);
+        lineChart.getYAxis().setAutoRanging(true);
+        lineChart.setLegendVisible(false);
+        lineChart.setTitle("The provided function in a specified interval");
     }
 
     private void setDependencyChartDefaultSettings() {
@@ -87,7 +89,8 @@ public class MainWindowController {
     }
 
     public void setUiControlsDefaultSettings() {
-        setFunctionChartDefaultSettings();
+        setFunctionChartDefaultSettings(gsFunctionChart);
+        setFunctionChartDefaultSettings(recgsFunctionChart);
         setDependencyChartDefaultSettings();
         populateDependencyChart();
     }
@@ -106,6 +109,39 @@ public class MainWindowController {
         }
 
         log.info(ReflectionHelper.getCurrentMethodName() + "()");
+    }
+
+    @FXML
+    private void countUserDefinedRecursiveGridSearchLocalMinimum() {
+        Double leftArgument = PrimitivesParser.getDouble(recgsLeftArgument.getText());
+        Double rightArgument = PrimitivesParser.getDouble(recgsRightArgument.getText());
+        Double accuracy = PrimitivesParser.getDouble(recgsAccuracy.getText());
+        Integer intervalDivisionsNo = PrimitivesParser.getInteger(recgsIntervalDivisions.getText());
+
+        if (leftArgument == null || rightArgument == null || accuracy == null || intervalDivisionsNo == null) {
+            new Alert(AlertType.ERROR, "Improper value." + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            return;
+        }
+
+        GridSearch gridSearch = new GridSearch();
+        Double localMinimum = null;
+
+        try {
+            localMinimum = gridSearch.getLocalMinimumArgument(leftArgument, rightArgument, accuracy, intervalDivisionsNo);
+        } catch (NoSuchElementException ex) {
+            log.error(ex.toString());
+            new Alert(AlertType.ERROR, "Left argument is greater than right argument.").showAndWait();
+            return;
+        } catch (IllegalArgumentException ex) {
+            log.error(ex.toString());
+            new Alert(AlertType.ERROR, "The number of interval divisions is lower than or equal to zero.").showAndWait();
+            return;
+        }
+
+        recgsLocalMinimum.setText(localMinimum.toString());
+        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getNumberOfCalls()));
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ", " + intervalDivisionsNo + ") = " + localMinimum);
+        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart);
     }
 
 }
