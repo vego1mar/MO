@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.mo.window.MainWindowController">
+<BorderPane prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.mo.window.MainWindowController">
    <opaqueInsets>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </opaqueInsets>
@@ -206,6 +206,104 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </LineChart>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="GSS">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" vmax="100.0">
+                     <content>
+                        <VBox prefHeight="567.0" prefWidth="368.0">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Lower limit (left x):" />
+                                    <Region prefHeight="40.0" prefWidth="28.0" />
+                                    <TextField fx:id="gssLeftArgument" promptText="1" text="1" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Upper limit (right x):" />
+                                    <Region prefHeight="40.0" prefWidth="19.0" />
+                                    <TextField fx:id="gssRightArgument" promptText="10" text="10" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Step (accuracy Ɛ):" />
+                                    <Region prefHeight="40.0" prefWidth="34.0" />
+                                    <TextField fx:id="gssAccuracy" promptText="0.001" text="0.001" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Result:" />
+                                    <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="91.0" />
+                                    <TextField fx:id="gssLocalMinimum" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Number of calls:" />
+                                    <Region prefHeight="40.0" prefWidth="40.0" />
+                                    <TextField fx:id="gssNumberOfCalls" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="574.0">
+                                 <children>
+                                    <Region prefHeight="40.0" prefWidth="138.0" />
+                                    <Button mnemonicParsing="false" onAction="#countUserDefinedGoldenSectionSearchLocalMinimum" text="Count local minimum" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                              <HBox layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="285.0" prefWidth="368.0">
+                                 <children>
+                                    <LineChart fx:id="gssFunctionChart">
+                                       <xAxis>
+                                          <NumberAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="900.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                              <HBox layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="285.0" prefWidth="368.0">
+                                 <children>
+                                    <BarChart fx:id="gsDependencyChart1">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </BarChart>
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />

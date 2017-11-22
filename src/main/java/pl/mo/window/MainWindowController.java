@@ -10,9 +10,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
+import pl.mo.algorithms.GoldenSectionSearch;
+import pl.mo.algorithms.Polynomial;
 import pl.mo.general.PrimitivesParser;
 import pl.mo.general.ReflectionHelper;
-import pl.mo.gs.GridSearch;
+import pl.mo.algorithms.GridSearch;
 
 public class MainWindowController {
 
@@ -34,6 +36,15 @@ public class MainWindowController {
     @FXML private TextField recgsNumberOfCalls;
     @FXML private LineChart<Double, Double> recgsFunctionChart;
 
+    @FXML private TextField gssLeftArgument;
+    @FXML private TextField gssRightArgument;
+    @FXML private TextField gssAccuracy;
+    @FXML private TextField gssLocalMinimum;
+    @FXML private TextField gssNumberOfCalls;
+    @FXML private LineChart<Double, Double> gssFunctionChart;
+
+    private static final String TXT_IMPROPER_VALUE = "Improper value.";
+
     @FXML
     private void countUserDefinedGridSearchLocalMinimum() {
         Double leftArgument = PrimitivesParser.getDouble(gsLeftArgument.getText());
@@ -41,7 +52,7 @@ public class MainWindowController {
         Double accuracy = PrimitivesParser.getDouble(gsAccuracy.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, "Improper value." + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -55,20 +66,18 @@ public class MainWindowController {
         }
 
         gsLocalMinimum.setText(localMinimum.toString());
-        gsNumberOfCalls.setText(String.valueOf(gridSearch.getNumberOfCalls()));
+        gsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunctionInvocations()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart);
+        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, gridSearch.getScoreFunction());
     }
 
     @FXML
-    private void populateFunctionChart(Double left, Double right, LineChart<Double, Double> lineChart) {
-        GridSearch gridSearch = new GridSearch();
+    private void populateFunctionChart(Double left, Double right, LineChart<Double, Double> lineChart, Polynomial scoreFunction) {
         Series series = new Series();
-        final int POINTS_PER_INTERVAL = 11;
-        final Double step = (right - left) / POINTS_PER_INTERVAL;
+        final Double step = (right - left) / 11;
 
         for (Double i = left; i <= right; i += step) {
-            series.getData().add(new Data<>(i, gridSearch.getPolynomialValue(i)));
+            series.getData().add(new Data<>(i, scoreFunction.getValue(i)));
         }
 
         lineChart.getData().clear();
@@ -91,6 +100,7 @@ public class MainWindowController {
     public void setUiControlsDefaultSettings() {
         setFunctionChartDefaultSettings(gsFunctionChart);
         setFunctionChartDefaultSettings(recgsFunctionChart);
+        setFunctionChartDefaultSettings(gssFunctionChart);
         setDependencyChartDefaultSettings();
         populateDependencyChart();
     }
@@ -104,7 +114,7 @@ public class MainWindowController {
             series.setName(String.valueOf(n));
             GridSearch gridSearch = new GridSearch();
             gridSearch.getLocalMinimumArgument(1.0, 10.0, n);
-            series.getData().add(new Data<>("", gridSearch.getNumberOfCalls()));
+            series.getData().add(new Data<>("", gridSearch.getScoreFunctionInvocations()));
             gsDependencyChart.getData().add(series);
         }
 
@@ -119,7 +129,7 @@ public class MainWindowController {
         Integer intervalDivisionsNo = PrimitivesParser.getInteger(recgsIntervalDivisions.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null || intervalDivisionsNo == null) {
-            new Alert(AlertType.ERROR, "Improper value." + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -139,9 +149,37 @@ public class MainWindowController {
         }
 
         recgsLocalMinimum.setText(localMinimum.toString());
-        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getNumberOfCalls()));
+        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunctionInvocations()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ", " + intervalDivisionsNo + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart);
+        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, gridSearch.getScoreFunction());
+    }
+
+    @FXML
+    private void countUserDefinedGoldenSectionSearchLocalMinimum() {
+        Double leftArgument = PrimitivesParser.getDouble(gssLeftArgument.getText());
+        Double rightArgument = PrimitivesParser.getDouble(gssRightArgument.getText());
+        Double accuracy = PrimitivesParser.getDouble(gssAccuracy.getText());
+
+        if (leftArgument == null || rightArgument == null || accuracy == null) {
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            return;
+        }
+
+        GoldenSectionSearch gss = new GoldenSectionSearch();
+        Double localMinimum;
+
+        try {
+            localMinimum = gss.getLocalMinimumArgument(leftArgument, rightArgument, accuracy);
+        } catch (IllegalArgumentException ex) {
+            log.error(ex.toString());
+            new Alert(AlertType.ERROR, "Left argument is greater than right argument.").showAndWait();
+            return;
+        }
+
+        gssLocalMinimum.setText(localMinimum.toString());
+        gssNumberOfCalls.setText(String.valueOf(gss.getScoreFunctionInvocations()));
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
+        populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, gss.getScoreFunction());
     }
 
 }

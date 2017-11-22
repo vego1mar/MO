@@ -3,7 +3,6 @@ package pl.mo.general;
 import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.ArgumentMatchers.anyInt;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -62,7 +61,7 @@ public class PrimitivesParserTest {
         String string1 = PrimitivesParser.getErrorMessage();
         Integer value2 = PrimitivesParser.getInteger("0");
         String string2 = PrimitivesParser.getErrorMessage();
-        Integer value3 = PrimitivesParser.getInteger(String.valueOf(Math.abs(anyInt())));
+        Integer value3 = PrimitivesParser.getInteger(String.valueOf(Integer.MAX_VALUE));
         String string3 = PrimitivesParser.getErrorMessage();
 
         // then
