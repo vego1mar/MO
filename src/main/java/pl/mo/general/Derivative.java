@@ -3,7 +3,7 @@ package pl.mo.general;
 import org.jetbrains.annotations.Contract;
 import pl.mo.algorithms.ScoreFunction;
 
-public strictfp class Derivative {
+public final strictfp class Derivative {
 
     public static final double IBM_FLOAT_SURROUNDING = 5.96E-8;
 

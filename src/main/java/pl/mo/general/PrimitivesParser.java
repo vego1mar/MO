@@ -3,7 +3,7 @@ package pl.mo.general;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
 
-public class PrimitivesParser {
+public final class PrimitivesParser {
 
     private static final Logger log = Logger.getLogger(PrimitivesParser.class);
     private static String errorMessage = null;

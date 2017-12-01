@@ -5,7 +5,7 @@ import java.lang.reflect.Modifier;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
-public class ReflectionHelper {
+public final class ReflectionHelper {
 
     private static final Logger log = Logger.getLogger(ReflectionHelper.class);
 
