@@ -12,10 +12,6 @@ public abstract class LocalMinimumSearchAlgorithm {
         return scoreFunction;
     }
 
-    public long getScoreFunctionInvocations() {
-        return scoreFunction.getNumberOfCalls();
-    }
-
     /**
      * Gets the argument of the local minimum for the given score function.
      * @param left Lower limit, left <b>x</b> of the search interval.

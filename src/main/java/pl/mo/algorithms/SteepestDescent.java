@@ -1,7 +1,5 @@
 package pl.mo.algorithms;
 
-import org.apache.log4j.Logger;
-
 /**
  * The steepest descent method (also called the stationary-phase method or saddle-point method), which can be traced back to
  * Cauchy (1847), is the simplest gradient method for unconstrained optimization.
@@ -11,9 +9,9 @@ import org.apache.log4j.Logger;
 public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
 
     public static final int MAXIMUM_ITERATIONS = 104_729;
-    public static final double GRADIENT_CONVERGENCE = 1.0E-13;
+    public static final double CONSTANT_GRADIENT_CONVERGENCE = 1.0E-13;
+    public static final double MUTABLE_GRADIENT_CONVERGENCE = 1.0E-8;
     public static final double MINIMIZER_STEP = 0.01;
-    private static final Logger log = Logger.getLogger(SteepestDescent.class);
     private int iterationsNo;
 
     /**
@@ -26,7 +24,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
     }
 
     /**
-     * Steepest descent algorithm specialization for real polynomial functions (one-dimensional).
+     * Steepest descent algorithm specialization for real one-dimensional functions.
      * The method performs the default specified number of iterations until the gradient convergence condition
      * will be satisfied.
      *
@@ -42,8 +40,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
         double minimizer = MINIMIZER_STEP;
         double nextX = x;
         iterationsNo = 0;
-        log.debug("startPoint=" + startPoint + "; minimizer=" + minimizer + "; MAXIMUM_ITERATIONS=" + MAXIMUM_ITERATIONS);
-        log.debug("scoreFunction.getDerivativeCoefficients()=" + scoreFunction.getDerivativeCoefficients());
+        final double GRADIENT_CONVERGENCE = isConstantMinimizerAllowed ? CONSTANT_GRADIENT_CONVERGENCE : MUTABLE_GRADIENT_CONVERGENCE;
 
         while (k < MAXIMUM_ITERATIONS) {
             x = nextX;
@@ -52,22 +49,19 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
             double direction = -dg;
 
             if (normL2 <= GRADIENT_CONVERGENCE) {
-                log.debug("normL2=" + normL2 + " <= GRADIENT_CONVERGENCE=" + GRADIENT_CONVERGENCE);
+                iterationsNo = k;
                 return nextX;
             }
 
             if (!isConstantMinimizerAllowed) {
-                // TODO: backtracking line search
-                log.debug("TODO block");
+                minimizer = LineSearch.performBacktracking(scoreFunction, x, direction);
             }
 
             nextX = x + (minimizer * direction);
-            log.debug("k=" + k + "; dg=" + dg + "; x(" + k + ")=" + nextX);
             k++;
         }
 
         iterationsNo = k;
-        log.debug("return exceeded; iterationsNo=" + getIterationsNo());
         return nextX;
     }
 

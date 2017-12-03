@@ -8,10 +8,13 @@ import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import pl.mo.algorithms.GoldenSectionSearch;
 import pl.mo.algorithms.Polynomial;
+import pl.mo.algorithms.SteepestDescent;
 import pl.mo.general.PrimitivesParser;
 import pl.mo.general.ReflectionHelper;
 import pl.mo.algorithms.GridSearch;
@@ -19,6 +22,7 @@ import pl.mo.algorithms.GridSearch;
 public class MainWindowController {
 
     private static final Logger log = Logger.getLogger(MainWindowController.class);
+    private static final String TXT_IMPROPER_VALUE = "Improper value.";
 
     @FXML private TextField gsLeftArgument;
     @FXML private TextField gsRightArgument;
@@ -43,7 +47,13 @@ public class MainWindowController {
     @FXML private TextField gssNumberOfCalls;
     @FXML private LineChart<Double, Double> gssFunctionChart;
 
-    private static final String TXT_IMPROPER_VALUE = "Improper value.";
+    @FXML private TextField sdStartPoint;
+    @FXML private CheckBox sdUseBacktracking;
+    @FXML private TextField sdResult;
+    @FXML private TextField sdResultAccuracy;
+    @FXML private TextField sdIterations;
+    @FXML private TextField sdFunctionCalls;
+    @FXML private LineChart<Double, Double> sdFunctionChart;
 
     @FXML
     private void countUserDefinedGridSearchLocalMinimum() {
@@ -66,7 +76,7 @@ public class MainWindowController {
         }
 
         gsLocalMinimum.setText(localMinimum.toString());
-        gsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunctionInvocations()));
+        gsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
         populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, gridSearch.getScoreFunction());
     }
@@ -85,7 +95,7 @@ public class MainWindowController {
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + left + ", " + right + ", " + lineChart.getId() + ")");
     }
 
-    private void setFunctionChartDefaultSettings(LineChart<Double, Double> lineChart) {
+    private void setFunctionChartDefaultSettings(@NotNull LineChart<Double, Double> lineChart) {
         lineChart.getXAxis().setAutoRanging(true);
         lineChart.getYAxis().setAutoRanging(true);
         lineChart.setLegendVisible(false);
@@ -101,6 +111,7 @@ public class MainWindowController {
         setFunctionChartDefaultSettings(gsFunctionChart);
         setFunctionChartDefaultSettings(recgsFunctionChart);
         setFunctionChartDefaultSettings(gssFunctionChart);
+        setFunctionChartDefaultSettings(sdFunctionChart);
         setDependencyChartDefaultSettings();
         populateDependencyChart();
     }
@@ -114,7 +125,7 @@ public class MainWindowController {
             series.setName(String.valueOf(n));
             GridSearch gridSearch = new GridSearch();
             gridSearch.getLocalMinimumArgument(1.0, 10.0, n);
-            series.getData().add(new Data<>("", gridSearch.getScoreFunctionInvocations()));
+            series.getData().add(new Data<>("", gridSearch.getScoreFunction().getNumberOfCalls()));
             gsDependencyChart.getData().add(series);
         }
 
@@ -149,7 +160,7 @@ public class MainWindowController {
         }
 
         recgsLocalMinimum.setText(localMinimum.toString());
-        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunctionInvocations()));
+        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ", " + intervalDivisionsNo + ") = " + localMinimum);
         populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, gridSearch.getScoreFunction());
     }
@@ -177,9 +188,35 @@ public class MainWindowController {
         }
 
         gssLocalMinimum.setText(localMinimum.toString());
-        gssNumberOfCalls.setText(String.valueOf(gss.getScoreFunctionInvocations()));
+        gssNumberOfCalls.setText(String.valueOf(gss.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
         populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, gss.getScoreFunction());
+    }
+
+    @FXML
+    private void countUserDefinedSteepestDescentLocalMinimum() {
+        Double startPoint = PrimitivesParser.getDouble(sdStartPoint.getText());
+        boolean isBacktracked = sdUseBacktracking.isSelected();
+
+        if (startPoint == null) {
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            return;
+        }
+
+        SteepestDescent sd = new SteepestDescent();
+        double localMinimum = sd.getLocalMinimumArgument(startPoint, !isBacktracked);
+        sdResult.setText(String.valueOf(localMinimum));
+        sdResultAccuracy.setText(String.valueOf(SteepestDescent.MUTABLE_GRADIENT_CONVERGENCE));
+
+        if (!isBacktracked) {
+            sdResultAccuracy.setText(String.valueOf(SteepestDescent.CONSTANT_GRADIENT_CONVERGENCE));
+        }
+
+        sdIterations.setText(String.valueOf(sd.getIterationsNo()));
+        sdFunctionCalls.setText(String.valueOf(sd.getScoreFunction().getNumberOfCalls()));
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ", backtracking = " + isBacktracked + ") = " + localMinimum);
+        final double WIDTH = 5.1;
+        populateFunctionChart(localMinimum - WIDTH, localMinimum + WIDTH, sdFunctionChart, sd.getScoreFunction());
     }
 
 }

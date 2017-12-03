@@ -1,55 +1,82 @@
 package pl.mo.algorithms;
 
-import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * Gathers different methods of performing a line search to find the step size.
+ *
+ * @version 1.1
+ */
 public final strictfp class LineSearch {
 
     public static final int BACKTRACKING_MAXIMUM_ITERATIONS = 1_123;
 
-    /* ρ ∈ (0,1) */
-    public static final double BACKTRACKING_MINIMIZER_MULTIPLIER = 0.5;
+    /**
+     * The backtracking line search step ρ ∈ (0,1), that is a contraction factor
+     * for the next iterate.
+     *
+     * @since 1.0
+     */
+    public static final double BACKTRACKING_STEP = 0.5;
 
-    /* c ∈ (0,1) */
-    public static final double BACKTRACKING_STEP = 10.0E-4;
+    /**
+     * The backtracking line search condition parameter c ∈ (0,1).
+     *
+     * @since 1.0
+     */
+    public static final double BACKTRACKING_PARAMETER = 1.0E-4;
 
     private LineSearch() {
         // This should be a utility class.
     }
 
     /**
-     * Gets the value that minimizes (solves) function of <b>f(x<sub>k</sub> + αp<sub>k</sub>)</b>.
+     * Gets the value that minimizes (solves) function of <b>f(x<sub>k</sub> + tp<sub>k</sub>)</b>.
      * This method deals with one-dimensional functions.
-     * The direction chosen is negative descent direction (negative gradient).
      *
-     * @param function definition of <b>f</b> that will be used
-     * @param startPoint of <b>x<sub>0</sub></b>
-     * @param startMinimizer that should be <b>α<sub>0</sub> > 0</b>
-     * @return the specified function minimizer, that is namely a step size
+     * @param f A function definition of <b>f</b> that will be used
+     * @param x A start point of <b>x<sub>k</sub> = x<sub>0</sub></b>
+     * @param d A (descent) direction of search, namely <b>p<sub>k</sub> = p<sub>0</sub></b>
+     * @return the function minimizer <b>t</b>, that is namely a step size
+     * @since 1.1
      */
-    @Contract(pure = true)
-    public static double performBacktracking(ScoreFunction function, double startPoint, double startMinimizer) {
-        double alfa = Math.abs(startMinimizer);
+    public static double performBacktracking(ScoreFunction f, double x, double d) {
         int k = 0;
+        double alfa = 1.0;
+        double x0 = x;
+        x = x0 + (alfa * d);
 
         while (k < BACKTRACKING_MAXIMUM_ITERATIONS) {
-            if (isBacktrackingConditionSatisfied(function, startPoint, alfa)) {
+            if (isArmijoConditionSatisfied(f, x, alfa, d)) {
                 break;
             }
 
-            alfa = BACKTRACKING_MINIMIZER_MULTIPLIER * alfa;
+            alfa = BACKTRACKING_STEP * alfa;
+            x = x0 + (alfa * d);
             k++;
-
         }
 
         return alfa;
     }
 
-    private static boolean isBacktrackingConditionSatisfied(ScoreFunction f, double x, double alfa) {
+    /**
+     * Checks whether the line search step (contraction) gives a sufficient decrease in function
+     * <b>f</b>. This condition is called Armijo or Wolfe condition and is expressed as follows:
+     * <tr></tr><b>f(x<sub>k</sub> + ap<sub>k</sub>) ≤ f(x<sub>k</sub>) + c<sub>1</sub>a(∇f
+     * <sub>k</sub>)<sup>T</sup>p<sub>k</sub></b><p></p>
+     *
+     * @param f is the function definition for calculating <b>f(x<sub>j</sub>)</b>
+     * @param x is the start point of line search
+     * @param t is the seeketh indeterminate, namely a step length
+     * @param d is the line search descent direction
+     * @return <b>true</b> when this condition has been fulfilled, <b>false</b> otherwise
+     * @since 1.1
+     */
+    private static boolean isArmijoConditionSatisfied(@NotNull ScoreFunction f, double x, double t, double d) {
         double dg = f.getDifferential(x);
-        double direction = -dg;
-        double left = f.getValue(x + (alfa * direction));
-        double right = f.getValue(x) + (BACKTRACKING_STEP * alfa * dg * direction);
-        return left <= right;
+        double lhs = f.getValue(x + (t * d));
+        double rhs = f.getValue(x) + (BACKTRACKING_PARAMETER * t * dg * d);
+        return lhs <= rhs;
     }
 
 }
