@@ -2,13 +2,15 @@ package pl.mo.general;
 
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public final class PrimitivesParser {
+public final class PrimitivesHelper {
 
-    private static final Logger log = Logger.getLogger(PrimitivesParser.class);
+    private static final Logger log = Logger.getLogger(PrimitivesHelper.class);
     private static String errorMessage = null;
 
-    private PrimitivesParser() {
+    private PrimitivesHelper() {
         // This should be a utility class.
     }
 
@@ -43,6 +45,22 @@ public final class PrimitivesParser {
         }
 
         return result;
+    }
+
+    @Nullable
+    public static <T> T castInto(Object object, @NotNull Class<T> tClass) {
+        T castedObject;
+        errorMessage = null;
+
+        try {
+            castedObject = tClass.cast(object);
+        } catch (ClassCastException | NumberFormatException ex) {
+            errorMessage = ex.getMessage();
+            log.error(ex.getMessage());
+            return null;
+        }
+
+        return castedObject;
     }
 
 }

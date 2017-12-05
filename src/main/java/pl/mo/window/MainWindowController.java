@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import pl.mo.algorithms.GoldenSectionSearch;
 import pl.mo.algorithms.Polynomial;
 import pl.mo.algorithms.SteepestDescent;
-import pl.mo.general.PrimitivesParser;
+import pl.mo.general.PrimitivesHelper;
 import pl.mo.general.ReflectionHelper;
 import pl.mo.algorithms.GridSearch;
 
@@ -57,12 +57,12 @@ public class MainWindowController {
 
     @FXML
     private void countUserDefinedGridSearchLocalMinimum() {
-        Double leftArgument = PrimitivesParser.getDouble(gsLeftArgument.getText());
-        Double rightArgument = PrimitivesParser.getDouble(gsRightArgument.getText());
-        Double accuracy = PrimitivesParser.getDouble(gsAccuracy.getText());
+        Double leftArgument = PrimitivesHelper.getDouble(gsLeftArgument.getText());
+        Double rightArgument = PrimitivesHelper.getDouble(gsRightArgument.getText());
+        Double accuracy = PrimitivesHelper.getDouble(gsAccuracy.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -134,13 +134,13 @@ public class MainWindowController {
 
     @FXML
     private void countUserDefinedRecursiveGridSearchLocalMinimum() {
-        Double leftArgument = PrimitivesParser.getDouble(recgsLeftArgument.getText());
-        Double rightArgument = PrimitivesParser.getDouble(recgsRightArgument.getText());
-        Double accuracy = PrimitivesParser.getDouble(recgsAccuracy.getText());
-        Integer intervalDivisionsNo = PrimitivesParser.getInteger(recgsIntervalDivisions.getText());
+        Double leftArgument = PrimitivesHelper.getDouble(recgsLeftArgument.getText());
+        Double rightArgument = PrimitivesHelper.getDouble(recgsRightArgument.getText());
+        Double accuracy = PrimitivesHelper.getDouble(recgsAccuracy.getText());
+        Integer intervalDivisionsNo = PrimitivesHelper.getInteger(recgsIntervalDivisions.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null || intervalDivisionsNo == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -167,12 +167,12 @@ public class MainWindowController {
 
     @FXML
     private void countUserDefinedGoldenSectionSearchLocalMinimum() {
-        Double leftArgument = PrimitivesParser.getDouble(gssLeftArgument.getText());
-        Double rightArgument = PrimitivesParser.getDouble(gssRightArgument.getText());
-        Double accuracy = PrimitivesParser.getDouble(gssAccuracy.getText());
+        Double leftArgument = PrimitivesHelper.getDouble(gssLeftArgument.getText());
+        Double rightArgument = PrimitivesHelper.getDouble(gssRightArgument.getText());
+        Double accuracy = PrimitivesHelper.getDouble(gssAccuracy.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -195,11 +195,11 @@ public class MainWindowController {
 
     @FXML
     private void countUserDefinedSteepestDescentLocalMinimum() {
-        Double startPoint = PrimitivesParser.getDouble(sdStartPoint.getText());
+        Double startPoint = PrimitivesHelper.getDouble(sdStartPoint.getText());
         boolean isBacktracked = sdUseBacktracking.isSelected();
 
         if (startPoint == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesParser.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
