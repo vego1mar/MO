@@ -7,9 +7,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.spy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -51,7 +51,7 @@ public class PolynomialTest {
     }
 
     @Test
-    public void getValue() {
+    public void getValue1() {
         // given
         Polynomial object1 = spy(new Polynomial());
         Polynomial object3 = spy(new Polynomial(0.0));
@@ -72,6 +72,15 @@ public class PolynomialTest {
         assertThat(value4, closeTo(1.0, IBM_FLOAT_SURROUNDING));
         assertThat(value5, closeTo(2.0, IBM_FLOAT_SURROUNDING));
         assertThat(value6, closeTo(10.731, IBM_FLOAT_SURROUNDING));
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void getValue2() {
+        // given
+        Polynomial polynomial = spy(new Polynomial());
+
+        // when
+        polynomial.getDifferential(anyInt(),anyInt());
     }
 
     @Test
@@ -121,7 +130,7 @@ public class PolynomialTest {
     }
 
     @Test
-    public void getDifferential() {
+    public void getDifferential1() {
         // given
         Polynomial polynomial1 = new Polynomial(1.0, 1.0, 0.0); // f(x) = x^2 + x
         Polynomial polynomial2 = spy(new Polynomial(10.0, 3.0)); // f(x) = 10x + 3
@@ -139,6 +148,15 @@ public class PolynomialTest {
         Assert.assertThat(differential2, closeTo(0.0, IBM_FLOAT_SURROUNDING));
         Assert.assertThat(differential3, closeTo(0.0, IBM_FLOAT_SURROUNDING));
         Assert.assertThat(differential4, closeTo(14.0, IBM_FLOAT_SURROUNDING));
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void getDifferential2() {
+        // given
+        Polynomial polynomial = spy(new Polynomial());
+
+        // when
+        polynomial.getDifferential(anyDouble(), anyDouble());
     }
 
     @Test

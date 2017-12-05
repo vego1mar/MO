@@ -178,4 +178,14 @@ public strictfp class Polynomial extends ScoreFunction {
         return null;
     }
 
+    @Override
+    public Number getValue(Number x, Number y) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Number> getDifferential(Number x, Number y) {
+        throw new UnsupportedOperationException();
+    }
+
 }

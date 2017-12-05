@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/general/AppTextsStockroom.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/general/Vectors.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/general/VectorsTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/general/PrimitivesParser.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/general/PrimitivesHelper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesHelperTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/general/AppTextsStockroom.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/window/AppTextsStockroom.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +89,53 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="SteepestDescent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#getLocalMinimumArgument#0;class#SteepestDescent#0" expanded="false" />
+                <element signature="docComment;method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+                <element signature="method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+                <element signature="docComment;method#getIterationsNo#0;class#SteepestDescent#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vectors.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Vectors.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getNorm#0;class#Vectors#0" expanded="false" />
+                <element signature="method#getSumOfPowers#0;class#Vectors#0" expanded="false" />
+                <element signature="method#cast#0;class#Vectors#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VectorsTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/VectorsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="method#cast#0;class#VectorsTest#0" expanded="false" />
+                <element signature="method#getSumOfPowers#0;class#VectorsTest#0" expanded="false" />
+                <element signature="method#getNorm#0;class#VectorsTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,12 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/log4j.properties" />
-        <option value="Y:/Roboczy/MainWindow.css" />
-        <option value="Y:/Roboczy/MainWindow-right.css" />
-        <option value="Y:/Roboczy/MainWindow-left.css" />
-        <option value="Y:/Roboczy/MainWindow-bottom.css" />
-        <option value="Y:/Roboczy/test.fxml" />
         <option value="$PROJECT_DIR$/src/pl/mo/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/MainWindowController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/MainWindow.fxml" />
@@ -148,16 +192,12 @@
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesParserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/ReflectionHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/PowerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Derivative.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Power.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/LineSearchTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/SteepestDescentTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java" />
@@ -167,9 +207,19 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/PrimitivesHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/Paraboloid.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesHelperTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/AppTextsStockroom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/window/AppTextsStockroom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Vector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Assertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/VectorsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Vectors.java" />
       </list>
     </option>
   </component>
@@ -232,6 +282,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,14 +405,19 @@
               <item name="mo" type="462c0819:PsiDirectoryNode" />
               <item name="general" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mo" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,7 +464,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParaboloidTest.getDifferential">
+  <component name="RunManager" selected="JUnit.VectorsTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="HTML_USED" value="false" />
@@ -449,19 +508,44 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="ParaboloidTest.getDifferential" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VectorsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="PATTERN" value="pl.mo.general.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MO" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
-      <option name="METHOD_NAME" value="getDifferential" />
+      <option name="PACKAGE_NAME" value="pl.mo.general" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.general.VectorsTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="VectorsTest.cast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pl.mo.general.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MO" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pl.mo.general" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.general.VectorsTest" />
+      <option name="METHOD_NAME" value="cast" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -474,19 +558,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ParaboloidTest.getDifferential1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VectorsTest.castIntegers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="PATTERN" value="pl.mo.general.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MO" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
-      <option name="METHOD_NAME" value="getDifferential1" />
+      <option name="PACKAGE_NAME" value="pl.mo.general" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.general.VectorsTest" />
+      <option name="METHOD_NAME" value="castIntegers" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -499,19 +583,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ParaboloidTest.getParameterD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VectorsTest.getNorm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="PATTERN" value="pl.mo.general.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MO" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
-      <option name="METHOD_NAME" value="getParameterD" />
+      <option name="PACKAGE_NAME" value="pl.mo.general" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.general.VectorsTest" />
+      <option name="METHOD_NAME" value="getNorm" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -524,44 +608,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ParaboloidTest.getParameterF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VectorsTest.getSumOfPowers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="PATTERN" value="pl.mo.general.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="MO" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
-      <option name="METHOD_NAME" value="getParameterF" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ParaboloidTest.getValue2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="MO" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
-      <option name="METHOD_NAME" value="getValue2" />
+      <option name="PACKAGE_NAME" value="pl.mo.general" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.general.VectorsTest" />
+      <option name="METHOD_NAME" value="getSumOfPowers" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -648,19 +707,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getValue2" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getParameterD" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getParameterF" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getDifferential1" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getDifferential" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.VectorsTest.cast" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.VectorsTest.castIntegers" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.VectorsTest.getSumOfPowers" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.VectorsTest.getNorm" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.VectorsTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getDifferential" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getDifferential1" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getParameterF" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getParameterD" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ParaboloidTest.getValue2" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.VectorsTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.VectorsTest.cast" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.VectorsTest.getNorm" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.VectorsTest.getSumOfPowers" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.VectorsTest.castIntegers" />
       </list>
     </recent_temporary>
   </component>
@@ -699,43 +758,44 @@
       <workItem from="1512295561409" duration="12667000" />
       <workItem from="1512308564134" duration="286000" />
       <workItem from="1512416144538" duration="19589000" />
+      <workItem from="1512492297346" duration="24892000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 31m 15s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest - 2017.12.06 at 00h 25m 29s.xml">
+      <configuration name="VectorsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 31m 32s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest - 2017.12.06 at 00h 30m 14s.xml">
+      <configuration name="VectorsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 36m 21s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest - 2017.12.06 at 00h 31m 58s.xml">
+      <configuration name="VectorsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 36m 32s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest - 2017.12.06 at 00h 36m 05s.xml">
+      <configuration name="VectorsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 42m 04s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_cast - 2017.12.06 at 00h 35m 02s.xml">
+      <configuration name="VectorsTest.cast" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 42m 13s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_cast - 2017.12.06 at 00h 35m 35s.xml">
+      <configuration name="VectorsTest.cast" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 42m 23s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_getNorm - 2017.12.06 at 00h 04m 42s.xml">
+      <configuration name="VectorsTest.getNorm" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 42m 53s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_getSumOfPowers - 2017.12.05 at 23h 49m 28s.xml">
+      <configuration name="VectorsTest.getSumOfPowers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 44m 21s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_getSumOfPowers - 2017.12.05 at 23h 50m 54s.xml">
+      <configuration name="VectorsTest.getSumOfPowers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParaboloidTest_getDifferential - 2017.12.05 at 01h 50m 40s.xml">
-      <configuration name="ParaboloidTest.getDifferential" configurationId="JUnit" />
+    <history-entry file="VectorsTest_getSumOfPowers - 2017.12.05 at 23h 51m 18s.xml">
+      <configuration name="VectorsTest.getSumOfPowers" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218599000" />
+    <option name="totallyTimeSpent" value="243491000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,6 +808,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="2173" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -762,10 +823,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21959299" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22148603" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24988168" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -778,12 +837,50 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27449125" sideWeight="0.5056361" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27449125" sideWeight="0.49436393" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986274" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24988168" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27449125" sideWeight="0.5056361" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22148603" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986274" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -800,7 +897,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="49" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -808,42 +905,26 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>vector.getClass()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>vector.getClass().name</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>vector.getClass().getComponentType()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://Y:/Sources/MavenLocalRepository/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#0;class#GridSearch#0" expanded="false" />
-            <element signature="docComment;method#getLocalMinimumArgument#1;class#GridSearch#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#1;class#GridSearch#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://Y:/Sources/MavenLocalRepository/org/mockito/mockito-core/2.12.0/mockito-core-2.12.0.jar!/org/mockito/internal/exceptions/stacktrace/StackTraceFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://Y:/Sources/MavenLocalRepository/org/mockito/mockito-core/2.12.0/mockito-core-2.12.0.jar!/org/mockito/internal/debugging/LocationImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -965,14 +1046,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runtime/log4j-application.log.1" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Derivative.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Power.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1025,17 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="method#compute1#0;class#DerivativeTest#0" expanded="false" />
-            <element signature="method#compute2#0;class#DerivativeTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/PowerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1050,9 +1112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="method#getCurrentMethodNameTest#0;class#ReflectionHelperTest#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,16 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getLocalMinimumArgument#0;class#LocalMinimumSearchAlgorithm#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1127,78 +1176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getLocalMinimumArgument#0;class#SteepestDescent#0" expanded="false" />
-            <element signature="docComment;method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
-            <element signature="docComment;method#getIterationsNo#0;class#SteepestDescent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="20" column="64" lean-forward="true" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-          <folding>
-            <element signature="method#ctor1#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#ctor2#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getValue#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getNumberOfCalls#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getDerivativeCoefficients#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getDifferential#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getRootByNewtonMethod#0;class#PolynomialTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="docComment;method#Polynomial#0;class#Polynomial#0" expanded="false" />
-            <element signature="method#Polynomial#0;class#Polynomial#0" expanded="false" />
-            <element signature="docComment;method#Polynomial#1;class#Polynomial#0" expanded="false" />
-            <element signature="method#Polynomial#1;class#Polynomial#0" expanded="false" />
-            <element signature="method#getValue#0;class#Polynomial#0" expanded="false" />
-            <element signature="docComment;method#getDerivativeCoefficients#0;class#Polynomial#0" expanded="false" />
-            <element signature="method#getDerivativeCoefficients#0;class#Polynomial#0" expanded="false" />
-            <element signature="docComment;method#getDifferential#0;class#Polynomial#0" expanded="false" />
-            <element signature="method#getDifferential#0;class#Polynomial#0" expanded="false" />
-            <element signature="docComment;method#getRootByNewtonMethod#0;class#Polynomial#0" expanded="false" />
-            <element signature="method#getRootByNewtonMethod#0;class#Polynomial#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1207,7 +1188,7 @@
         <state relative-caret-position="391">
           <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#getDouble#0;class#PrimitivesHelper#0" expanded="false" />
             <element signature="method#getInteger#0;class#PrimitivesHelper#0" expanded="false" />
             <element signature="method#castInto#0;class#PrimitivesHelper#0" expanded="false" />
@@ -1243,10 +1224,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/AppTextsStockroom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#getLocalMinimumArgument#0;class#LocalMinimumSearchAlgorithm#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Polynomial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#Polynomial#0;class#Polynomial#0" expanded="false" />
+            <element signature="method#Polynomial#0;class#Polynomial#0" expanded="false" />
+            <element signature="docComment;method#Polynomial#1;class#Polynomial#0" expanded="false" />
+            <element signature="method#Polynomial#1;class#Polynomial#0" expanded="false" />
+            <element signature="method#getValue#0;class#Polynomial#0" expanded="false" />
+            <element signature="docComment;method#getDerivativeCoefficients#0;class#Polynomial#0" expanded="false" />
+            <element signature="method#getDerivativeCoefficients#0;class#Polynomial#0" expanded="false" />
+            <element signature="docComment;method#getDifferential#0;class#Polynomial#0" expanded="false" />
+            <element signature="method#getDifferential#0;class#Polynomial#0" expanded="false" />
+            <element signature="docComment;method#getRootByNewtonMethod#0;class#Polynomial#0" expanded="false" />
+            <element signature="method#getRootByNewtonMethod#0;class#Polynomial#0" expanded="false" />
+            <element signature="e#6383#6384#0" expanded="true" />
+            <element signature="e#6460#6461#0" expanded="true" />
+            <element signature="e#6517#6518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ctor1#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#ctor2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getValue2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getNumberOfCalls#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDerivativeCoefficients#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDifferential1#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDifferential2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getRootByNewtonMethod#0;class#PolynomialTest#0" expanded="false" />
+            <marker date="1512495297006" expanded="false" signature="1665:2639" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/ScoreFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#Paraboloid#0;class#Paraboloid#0" expanded="false" />
+            <element signature="e#2178#2179#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="docComment;method#Paraboloid#1;class#Paraboloid#0" expanded="false" />
+            <element signature="e#2970#2971#0" expanded="true" />
+            <element signature="e#3032#3033#0" expanded="true" />
+            <element signature="docComment;method#Paraboloid#2;class#Paraboloid#0" expanded="false" />
+            <element signature="e#3265#3266#0" expanded="true" />
+            <element signature="e#3330#3331#0" expanded="true" />
+            <element signature="docComment;method#getValue#0;class#Paraboloid#0" expanded="false" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3607#3608#0" expanded="true" />
+            <element signature="docComment;method#getValue#1;class#Paraboloid#0" expanded="false" />
+            <element signature="method#getValue#1;class#Paraboloid#0" expanded="false" />
+            <element signature="e#4882#4883#0" expanded="true" />
+            <element signature="e#4953#4954#0" expanded="true" />
+            <element signature="e#5019#5020#0" expanded="true" />
+            <element signature="e#5090#5091#0" expanded="true" />
+            <element signature="e#5156#5157#0" expanded="true" />
+            <element signature="e#5227#5228#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5364#5365#0" expanded="true" />
+            <element signature="e#5430#5431#0" expanded="true" />
+            <element signature="e#5501#5502#0" expanded="true" />
+            <element signature="e#5567#5568#0" expanded="true" />
+            <element signature="e#5638#5639#0" expanded="true" />
+            <element signature="e#5704#5705#0" expanded="true" />
+            <element signature="e#5775#5776#0" expanded="true" />
+            <element signature="docComment;method#getDifferential#0;class#Paraboloid#0" expanded="false" />
+            <element signature="e#5929#5930#0" expanded="true" />
+            <element signature="e#6059#6060#0" expanded="true" />
+            <element signature="docComment;method#getDifferential#1;class#Paraboloid#0" expanded="false" />
+            <element signature="method#getDifferential#1;class#Paraboloid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Assertions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="172" column="34" lean-forward="false" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
+        <state relative-caret-position="705">
+          <caret line="188" column="23" lean-forward="false" selection-start-line="188" selection-start-column="23" selection-end-line="188" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getParameterA#0;class#ParaboloidTest#0" expanded="false" />
@@ -1259,63 +1373,74 @@
             <element signature="method#getValue1#0;class#ParaboloidTest#0" expanded="false" />
             <element signature="method#getValue2#0;class#ParaboloidTest#0" expanded="false" />
             <element signature="method#getDifferential1#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getDifferential#0;class#ParaboloidTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="method#compute1#0;class#DerivativeTest#0" expanded="false" />
+            <element signature="method#compute2#0;class#DerivativeTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Derivative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Paraboloid#0" expanded="false" />
-            <element signature="docComment;method#Paraboloid#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2242#2243#0" expanded="true" />
-            <element signature="docComment;method#Paraboloid#1;class#Paraboloid#0" expanded="false" />
-            <element signature="e#2971#2972#0" expanded="true" />
-            <element signature="e#3033#3034#0" expanded="true" />
-            <element signature="docComment;method#Paraboloid#2;class#Paraboloid#0" expanded="false" />
-            <element signature="e#3266#3267#0" expanded="true" />
-            <element signature="e#3331#3332#0" expanded="true" />
-            <element signature="docComment;method#getValue#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#3478#3479#0" expanded="true" />
-            <element signature="e#3608#3609#0" expanded="true" />
-            <element signature="docComment;method#getValue#1;class#Paraboloid#0" expanded="false" />
-            <element signature="method#getValue#1;class#Paraboloid#0" expanded="false" />
-            <element signature="e#5207#5208#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#5344#5345#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
-            <element signature="e#5481#5482#0" expanded="true" />
-            <element signature="e#5552#5553#0" expanded="true" />
-            <element signature="e#5618#5619#0" expanded="true" />
-            <element signature="e#5689#5690#0" expanded="true" />
-            <element signature="e#5755#5756#0" expanded="true" />
-            <element signature="e#5826#5827#0" expanded="true" />
-            <element signature="e#5892#5893#0" expanded="true" />
-            <element signature="e#5963#5964#0" expanded="true" />
-            <element signature="e#6029#6030#0" expanded="true" />
-            <element signature="e#6100#6101#0" expanded="true" />
-            <element signature="docComment;method#getDifferential#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#6254#6255#0" expanded="true" />
-            <element signature="e#6384#6385#0" expanded="true" />
-            <element signature="method#getDifferential#1;class#Paraboloid#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/AppTextsStockroom.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="229">
+          <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
           <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getLocalMinimumArgument#0;class#SteepestDescent#0" expanded="false" />
+            <element signature="docComment;method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+            <element signature="docComment;method#getIterationsNo#0;class#SteepestDescent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Vectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getNorm#0;class#Vectors#0" expanded="false" />
+            <element signature="method#getSumOfPowers#0;class#Vectors#0" expanded="false" />
+            <element signature="method#cast#0;class#Vectors#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/VectorsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="method#cast#0;class#VectorsTest#0" expanded="false" />
+            <element signature="method#getSumOfPowers#0;class#VectorsTest#0" expanded="false" />
+            <element signature="method#getNorm#0;class#VectorsTest#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.mo.general.Derivative;
+import pl.mo.tests.Assertions;
 
 public class ParaboloidTest {
 
@@ -185,10 +186,7 @@ public class ParaboloidTest {
 
         // then
         Assert.assertArrayEquals(new ArrayList<Number>(Arrays.asList(12, 8)).toArray(), gradient1.toArray());
-
-        for (int i = 0; i < gradient2.size(); i++) {
-            assertThat(gradient2.get(i).doubleValue(), closeTo(EXPECTED_2.get(i).doubleValue(), Derivative.IBM_FLOAT_SURROUNDING));
-        }
+        Assertions.assertValues(gradient2, EXPECTED_2, Number.class);
     }
 
 }

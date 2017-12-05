@@ -1,5 +1,8 @@
 package pl.mo.algorithms;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The steepest descent method (also called the stationary-phase method or saddle-point method), which can be traced back to
  * Cauchy (1847), is the simplest gradient method for unconstrained optimization.
@@ -74,6 +77,38 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
      */
     public int getIterationsNo() {
         return iterationsNo;
+    }
+
+    public List<Double> getLocalMinimumArgument(List<Double> startPoint, boolean isConstantMinimizerAllowed) {
+        throw new UnsupportedOperationException();
+//        int k = 0;
+//        List<Double> x = new ArrayList<>(startPoint);
+//        double minimizer = MINIMIZER_STEP;
+//        List<Double> nextX = new ArrayList<>(x);
+//        iterationsNo = 0;
+//        final double GRADIENT_CONVERGENCE = isConstantMinimizerAllowed ? CONSTANT_GRADIENT_CONVERGENCE : MUTABLE_GRADIENT_CONVERGENCE;
+//
+//        while (k < MAXIMUM_ITERATIONS) {
+//            x = nextX;
+//            List<Number> dg = scoreFunction.getDifferential(x.get(0), x.get(1));
+////            double normL2 = Math.abs(dg);
+////            double direction = -dg;
+//
+////            if (normL2 <= GRADIENT_CONVERGENCE) {
+////                iterationsNo = k;
+////                return nextX;
+////            }
+//
+////            if (!isConstantMinimizerAllowed) {
+////                minimizer = LineSearch.performBacktracking(scoreFunction, x, direction);
+////            }
+//
+////            nextX = x + (minimizer * direction);
+//            k++;
+//        }
+//
+//        iterationsNo = k;
+//        return nextX;
     }
 
 }

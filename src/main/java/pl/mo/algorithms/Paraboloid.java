@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import pl.mo.general.AppTextsStockroom;
+import pl.mo.window.AppTextsStockroom;
 import pl.mo.general.PrimitivesHelper;
 
 /**
@@ -85,15 +85,11 @@ public strictfp class Paraboloid extends ScoreFunction {
     }
 
     /**
-     * Obtain the function value at the given argument.<p></p>
-     * Note, that only Integer and Double types are allowed.<p></p>
+     * Note, that only <b>Integer</b> and <b>Double</b> types are allowed.<p></p>
      *
-     * @param x is the first argument dimension
-     * @param y is the second argument dimension
-     * @return <b>f(x,y)</b>, where <b>f</b> is the given function definition; <b>null</b>
-     *     if one of the types differs from <b>Integer</b> or <b>Double</b> or they are not the same
      * @since 1.0
      */
+    @Override
     public Number getValue(Number x, Number y) {
         if (x instanceof Integer && y instanceof Integer) {
             x = (getParameterD(Integer.class) * x.intValue()) + getParameterF(Integer.class);
@@ -151,6 +147,12 @@ public strictfp class Paraboloid extends ScoreFunction {
         throw new UnsupportedOperationException(AppTextsStockroom.getInstance().getParaboloid().getMsgOverwrittenMethod());
     }
 
+    /**
+     * Note, that only <b>Integer</b> and <b>Double</b> types are allowed.<p></p>
+     *
+     * @since 1.0
+     */
+    @Override
     public List<Number> getDifferential(Number x, Number y) {
         if (x instanceof Integer && y instanceof Integer) {
             x = (getParameterD(Integer.class) * x.intValue()) + getParameterF(Integer.class);

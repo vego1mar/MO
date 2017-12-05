@@ -1,4 +1,4 @@
-package pl.mo.general;
+package pl.mo.window;
 
 import org.jetbrains.annotations.Contract;
 
