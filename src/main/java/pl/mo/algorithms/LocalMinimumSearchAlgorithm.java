@@ -2,14 +2,18 @@ package pl.mo.algorithms;
 
 public abstract class LocalMinimumSearchAlgorithm {
 
-    protected Polynomial scoreFunction;
+    protected ScoreFunction scoreFunction;
 
     protected LocalMinimumSearchAlgorithm() {
         scoreFunction = new Polynomial();
     }
 
-    public Polynomial getScoreFunction() {
+    public ScoreFunction getScoreFunction() {
         return scoreFunction;
+    }
+
+    public void setScoreFunction(ScoreFunction scoreFunction) {
+        this.scoreFunction = scoreFunction;
     }
 
     /**

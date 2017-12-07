@@ -5,13 +5,15 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.spy;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.mo.general.ReflectionHelper;
+import pl.mo.tests.Assertions;
 
 public class SteepestDescentTest {
 
-    private static final double IBM_FLOAT_SURROUNDING = 5.96E-8;
     private SteepestDescent object = spy(new SteepestDescent());
 
     @Test(expected = UnsupportedOperationException.class)
@@ -34,8 +36,8 @@ public class SteepestDescentTest {
         int result2No = object.getIterationsNo();
 
         // then
-        assertThat(result1, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
-        assertThat(result2, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
+        assertThat(result1, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
+        assertThat(result2, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
         Assert.assertTrue(result2No < result1No);
     }
 
@@ -53,8 +55,8 @@ public class SteepestDescentTest {
         int result2No = object.getIterationsNo();
 
         // then
-        Assert.assertThat(result1, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
-        Assert.assertThat(result2, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
+        Assert.assertThat(result1, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
+        Assert.assertThat(result2, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
         Assert.assertTrue(result2No < result1No);
     }
 
@@ -72,9 +74,45 @@ public class SteepestDescentTest {
         int result2No = object.getIterationsNo();
 
         // then
-        Assert.assertThat(result1, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
-        Assert.assertThat(result2, closeTo(LOCAL_MINIMUM, IBM_FLOAT_SURROUNDING));
+        Assert.assertThat(result1, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
+        Assert.assertThat(result2, closeTo(LOCAL_MINIMUM, Assertions.IBM_FLOAT_SURROUNDING));
         Assert.assertTrue(result2No < result1No);
+    }
+
+    @Test
+    public void getLocalMinimumArgument5() throws IllegalAccessException {
+        // given
+        Paraboloid paraboloid = new Paraboloid();
+        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, paraboloid);
+
+        // when
+        List<Double> localMinimum1 = object.getLocalMinimumArgument(Arrays.asList(5.0, 5.0), false);
+        List<Double> localMinimum2 = object.getLocalMinimumArgument(Arrays.asList(5.0, 5.0), true);
+
+        // then
+        Assertions.assertDoubles(localMinimum1, Arrays.asList(2.0, 1.0), 0.1E-3);
+        Assertions.assertValues(localMinimum2, Arrays.asList(2.0, 1.0), Double.class);
+    }
+
+    @Test
+    public void getLocalMinimumArgument6() throws IllegalAccessException {
+        // given
+        final double A = Math.sqrt(2.0 / 7.0);
+        final double F = -2.0 / 3.0;
+        final double B = Math.sqrt(7.0 / 2.0);
+        final double G = 3.0 / 2.0;
+        final double C = Math.log(3.0 * Math.sqrt(7.0));
+        Paraboloid paraboloid = new Paraboloid(A,1.0, F, B,1.0, G,C);
+        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, paraboloid);
+        final List<Double> expectedLocalMinimum = Arrays.asList(2.0 / 3.0, -3.0 / 2.0);
+
+        // when
+        List<Double> localMinimum1 = object.getLocalMinimumArgument(expectedLocalMinimum, false);
+        List<Double> localMinimum2 = object.getLocalMinimumArgument(expectedLocalMinimum, true);
+
+        // then
+        Assertions.assertValues(localMinimum1, expectedLocalMinimum, Double.class);
+        Assertions.assertValues(localMinimum2, expectedLocalMinimum, Double.class);
     }
 
 }

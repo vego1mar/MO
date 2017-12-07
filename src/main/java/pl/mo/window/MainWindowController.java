@@ -1,5 +1,7 @@
 package pl.mo.window;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import pl.mo.algorithms.GoldenSectionSearch;
+import pl.mo.algorithms.Paraboloid;
 import pl.mo.algorithms.Polynomial;
 import pl.mo.algorithms.SteepestDescent;
 import pl.mo.general.PrimitivesHelper;
@@ -47,7 +50,8 @@ public class MainWindowController {
     @FXML private TextField gssNumberOfCalls;
     @FXML private LineChart<Double, Double> gssFunctionChart;
 
-    @FXML private TextField sdStartPoint;
+    @FXML private TextField sdStartPointX;
+    @FXML private TextField sdStartPointY;
     @FXML private CheckBox sdUseBacktracking;
     @FXML private TextField sdResult;
     @FXML private TextField sdResultAccuracy;
@@ -78,7 +82,7 @@ public class MainWindowController {
         gsLocalMinimum.setText(localMinimum.toString());
         gsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, gridSearch.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, (Polynomial) gridSearch.getScoreFunction());
     }
 
     @FXML
@@ -162,7 +166,7 @@ public class MainWindowController {
         recgsLocalMinimum.setText(localMinimum.toString());
         recgsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ", " + intervalDivisionsNo + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, gridSearch.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, (Polynomial) gridSearch.getScoreFunction());
     }
 
     @FXML
@@ -190,21 +194,24 @@ public class MainWindowController {
         gssLocalMinimum.setText(localMinimum.toString());
         gssNumberOfCalls.setText(String.valueOf(gss.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, gss.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, (Polynomial) gss.getScoreFunction());
     }
 
     @FXML
     private void countUserDefinedSteepestDescentLocalMinimum() {
-        Double startPoint = PrimitivesHelper.getDouble(sdStartPoint.getText());
+        Double startPointX = PrimitivesHelper.getDouble(sdStartPointX.getText());
+        Double startPointY = PrimitivesHelper.getDouble(sdStartPointY.getText());
+        List<Double> startPoint = Arrays.asList(startPointX, startPointY);
         boolean isBacktracked = sdUseBacktracking.isSelected();
 
-        if (startPoint == null) {
+        if (startPointX == null || startPointY == null) {
             new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
         SteepestDescent sd = new SteepestDescent();
-        double localMinimum = sd.getLocalMinimumArgument(startPoint, !isBacktracked);
+        sd.setScoreFunction(new Paraboloid());
+        List<Double> localMinimum = sd.getLocalMinimumArgument(startPoint, !isBacktracked);
         sdResult.setText(String.valueOf(localMinimum));
         sdResultAccuracy.setText(String.valueOf(SteepestDescent.MUTABLE_GRADIENT_CONVERGENCE));
 
@@ -215,8 +222,7 @@ public class MainWindowController {
         sdIterations.setText(String.valueOf(sd.getIterationsNo()));
         sdFunctionCalls.setText(String.valueOf(sd.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ", backtracking = " + isBacktracked + ") = " + localMinimum);
-        final double WIDTH = 5.1;
-        populateFunctionChart(localMinimum - WIDTH, localMinimum + WIDTH, sdFunctionChart, sd.getScoreFunction());
+        // TODO: populate function chart with a 3D chart using Orson Charts
     }
 
 }

@@ -1,6 +1,9 @@
 package pl.mo.algorithms;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import pl.mo.general.Vectors;
 
 /**
  * Gathers different methods of performing a line search to find the step size.
@@ -76,6 +79,34 @@ public final strictfp class LineSearch {
         double dg = f.getDifferential(x);
         double lhs = f.getValue(x + (t * d));
         double rhs = f.getValue(x) + (BACKTRACKING_PARAMETER * t * dg * d);
+        return lhs <= rhs;
+    }
+
+    public static double performBacktracking(ScoreFunction f, List<Double> x, List<Double> d) {
+        int k = 0;
+        double alfa = 1.0;
+        List<Double> x0 = new ArrayList<>(x);
+        x = Vectors.add(x0, Vectors.multiplyByScalar(d, alfa));
+
+        while (k < BACKTRACKING_MAXIMUM_ITERATIONS) {
+            if (isArmijoConditionSatisfied(f, x, alfa, d)) {
+                break;
+            }
+
+            alfa = BACKTRACKING_STEP * alfa;
+            x = Vectors.add(x0, Vectors.multiplyByScalar(d, alfa));
+            k++;
+        }
+
+        return alfa;
+    }
+
+    private static boolean isArmijoConditionSatisfied(@NotNull ScoreFunction f, List<Double> x, double t, List<Double> d) {
+        List<Double> lhsVector = Vectors.add(x, Vectors.multiplyByScalar(d, t));
+        Double lhs = Vectors.cast(f.getValue(lhsVector.get(0), lhsVector.get(1)), Double.class);
+        Double leftRhs = Vectors.cast(f.getValue(x.get(0), x.get(1)), Double.class);
+        Double rightRhs = BACKTRACKING_PARAMETER * t * Vectors.multiplyAsMatrix(x, d);
+        Double rhs = leftRhs + rightRhs;
         return lhs <= rhs;
     }
 

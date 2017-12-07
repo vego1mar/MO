@@ -27,6 +27,12 @@ public strictfp class Assertions {
         }
     }
 
+    public static void assertDoubles(@NotNull List<Double> actual, List<Double> expected, double error) {
+        for (int i = 0; i < actual.size(); i++) {
+            assertThat(actual.get(i), closeTo(expected.get(i), error));
+        }
+    }
+
     public static <T, E> void assertTypes(@NotNull List<T> actual, List<E> expected) {
         for (int i = 0; i < actual.size(); i++) {
             Assert.assertTrue(actual.get(i).getClass() == expected.get(i).getClass());
@@ -47,6 +53,10 @@ public strictfp class Assertions {
                 assertThat(actual.get(i).doubleValue(), closeTo(expected.get(i).doubleValue(), IBM_FLOAT_SURROUNDING));
             }
         }
+    }
+
+    public static <T, E> void assertType(@NotNull T actual, Class<E> expected) {
+        Assert.assertTrue(actual.getClass() == expected);
     }
 
 }

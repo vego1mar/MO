@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import pl.mo.window.AppTextsStockroom;
-import pl.mo.general.PrimitivesHelper;
 
 /**
  * Provides ways to define a real-based or integer-based elliptic paraboloid.<p></p>
@@ -27,25 +26,7 @@ import pl.mo.general.PrimitivesHelper;
  */
 public strictfp class Paraboloid extends ScoreFunction {
 
-    private Object[] parameters;
-
-    /**
-     * Provide a way to define the paraboloid function expressed as follows:<tr></tr>
-     * f(x,y) = a(dx + f)<sup>2</sup> + b(ey + g)<sup>2</sup> + c
-     * <p></p>
-     *
-     * @param a is the first subtraction square factor
-     * @param d is the first subtraction square dimension <b>x</b> subtrahend
-     * @param f is the first dimension <b>x</b> multiplier
-     * @param b is the second subtraction square factor
-     * @param e is the second subtraction square dimension <b>y</b> subtrahend
-     * @param g is the second dimension <b>y</b> multiplier
-     * @param c is the free expression
-     * @since 1.0
-     */
-    public Paraboloid(int a, int d, int f, int b, int e, int g, int c) {
-        parameters = new Integer[]{a, d, f, b, e, g, c};
-    }
+    private Double[] parameters;
 
     /**
      * Provide a way to define the paraboloid function expressed as follows:<tr></tr>
@@ -72,7 +53,7 @@ public strictfp class Paraboloid extends ScoreFunction {
      * @since 1.0
      */
     public Paraboloid() {
-        parameters = new Integer[]{2, 1, -2, 1, 1, -1, 3};
+        parameters = new Double[]{2.0, 1.0, -2.0, 1.0, 1.0, -1.0, 3.0};
     }
 
     /**
@@ -85,57 +66,51 @@ public strictfp class Paraboloid extends ScoreFunction {
     }
 
     /**
-     * Note, that only <b>Integer</b> and <b>Double</b> types are allowed.<p></p>
+     * Note, that only <b>Double</b> type is allowed.<p></p>
      *
+     * @throws NullPointerException if any of the arguments are <b>null</b>
      * @since 1.0
      */
     @Override
     public Number getValue(Number x, Number y) {
-        if (x instanceof Integer && y instanceof Integer) {
-            x = (getParameterD(Integer.class) * x.intValue()) + getParameterF(Integer.class);
-            x = getParameterA(Integer.class) * x.intValue() * x.intValue();
-            y = (getParameterE(Integer.class) * y.intValue()) + getParameterG(Integer.class);
-            y = getParameterB(Integer.class) * y.intValue() * y.intValue();
-            return x.intValue() + y.intValue() + getParameterC(Integer.class);
-        }
-
         if (x instanceof Double && y instanceof Double) {
-            x = (getParameterD(Double.class) * x.doubleValue()) + getParameterF(Double.class);
-            x = getParameterA(Double.class) * x.doubleValue() * x.doubleValue();
-            y = (getParameterE(Double.class) * y.doubleValue()) + getParameterG(Double.class);
-            y = getParameterB(Double.class) * y.doubleValue() * y.doubleValue();
-            return x.doubleValue() + y.doubleValue() + getParameterC(Double.class);
+            numberOfCalls++;
+            x = (getParameterD() * x.doubleValue()) + getParameterF();
+            x = getParameterA() * x.doubleValue() * x.doubleValue();
+            y = (getParameterE() * y.doubleValue()) + getParameterG();
+            y = getParameterB() * y.doubleValue() * y.doubleValue();
+            return x.doubleValue() + y.doubleValue() + getParameterC();
         }
 
         return null;
     }
 
-    public <T extends Number> T getParameterA(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[0], tClass);
+    public Double getParameterA() {
+        return parameters[0];
     }
 
-    public <T extends Number> T getParameterD(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[1], tClass);
+    public Double getParameterD() {
+        return parameters[1];
     }
 
-    public <T extends Number> T getParameterF(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[2], tClass);
+    public Double getParameterF() {
+        return parameters[2];
     }
 
-    public <T extends Number> T getParameterB(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[3], tClass);
+    public Double getParameterB() {
+        return parameters[3];
     }
 
-    public <T extends Number> T getParameterE(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[4], tClass);
+    public Double getParameterE() {
+        return parameters[4];
     }
 
-    public <T extends Number> T getParameterG(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[5], tClass);
+    public Double getParameterG() {
+        return parameters[5];
     }
 
-    public <T extends Number> T getParameterC(Class<T> tClass) {
-        return PrimitivesHelper.castInto(parameters[6], tClass);
+    public Double getParameterC() {
+        return parameters[6];
     }
 
     /**
@@ -148,25 +123,18 @@ public strictfp class Paraboloid extends ScoreFunction {
     }
 
     /**
-     * Note, that only <b>Integer</b> and <b>Double</b> types are allowed.<p></p>
+     * Note, that only <b>Double</b> type is allowed.<p></p>
      *
+     * @throws NullPointerException if any of the arguments are <b>null</b>
      * @since 1.0
      */
     @Override
     public List<Number> getDifferential(Number x, Number y) {
-        if (x instanceof Integer && y instanceof Integer) {
-            x = (getParameterD(Integer.class) * x.intValue()) + getParameterF(Integer.class);
-            x = (2 * getParameterA(Integer.class)) * x.intValue();
-            y = (getParameterE(Integer.class) * y.intValue()) + getParameterG(Integer.class);
-            y = (2 * getParameterB(Integer.class)) * y.intValue();
-            return new ArrayList<>(Arrays.asList(x, y));
-        }
-
         if (x instanceof Double && y instanceof Double) {
-            x = (getParameterD(Double.class) * x.doubleValue()) + getParameterF(Double.class);
-            x = (2.0 * getParameterA(Double.class)) * x.doubleValue();
-            y = (getParameterE(Double.class) * y.doubleValue()) + getParameterG(Double.class);
-            y = (2.0 * getParameterB(Double.class)) * y.doubleValue();
+            x = (getParameterD() * x.doubleValue()) + getParameterF();
+            x = (2.0 * getParameterA()) * x.doubleValue();
+            y = (getParameterE() * y.doubleValue()) + getParameterG();
+            y = (2.0 * getParameterB()) * y.doubleValue();
             return new ArrayList<>(Arrays.asList(x, y));
         }
 
