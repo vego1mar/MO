@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="MO">
+    <output-path>$PROJECT_DIR$/out/artifacts/MO</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="pl.mo.window.MainWindow" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="MO.jar">
+        <element id="module-output" name="MO" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+      <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+      <element id="library" level="project" name="Maven: org.jetbrains:annotations:15.0" />
+    </root>
+  </artifact>
+</component>

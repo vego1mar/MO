@@ -3,29 +3,23 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MO" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/strings/ClassBundle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/strings/GoldenSectionSearchBundle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/strings/GridSearchBundle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/strings/MainWindowBundle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/strings/ParaboloidBundle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/bundles/GoldenSectionSearch_en_US.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/bundles/GridSearch_en_US.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/bundles/Paraboloid_en_US.properties" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_object_refinery_orsoncharts_1_7.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MO.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/bundles/GoldenSectionSearch.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/bundles/GridSearch.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/bundles/MainWindow.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/bundles/Paraboloid.properties" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/MO.iml" afterPath="$PROJECT_DIR$/MO.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GoldenSectionSearch.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GoldenSectionSearch.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/general/ReflectionHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/general/ReflectionHelper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/window/AppTextsStockroom.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindow.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow.fxml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,14 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesParserTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/general/PowerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Derivative.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Power.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/EllipticParaboloid.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/PrimitivesParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/PrimitivesHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/Paraboloid.java" />
@@ -157,13 +143,11 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/LineSearchTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/SteepestDescentTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/Vectors.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/StringsBundle.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindowBundle.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/bundles/MainWindowBundle_en_US.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/window/AppFiles.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/window/AppBundles.java" />
@@ -184,6 +168,16 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/strings/GridSearchBundle.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/mo/general/ReflectionHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/bundles/GoldenSectionSearch.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/algorithms/GoldenSectionSearchTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/bundles/GridSearch.properties" />
+        <option value="$PROJECT_DIR$/src/test/resources/bundles/MainWindow_en_US.properties" />
+        <option value="$PROJECT_DIR$/src/test/resources/bundles/Paraboloid.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </list>
     </option>
   </component>
@@ -248,14 +242,19 @@
     <panes>
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MO" type="b2602c69:ProjectViewProjectNode" />
               <item name="MO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MO" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MO" type="b2602c69:ProjectViewProjectNode" />
@@ -343,14 +342,6 @@
               <item name="MO" type="b2602c69:ProjectViewProjectNode" />
               <item name="MO" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="MainWindow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MO" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -395,6 +386,21 @@
               <item name="mo" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -413,25 +419,26 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TMP" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="Y:\Projekty\MO" />
-      <recent name="Y:\Projekty\MO\src\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Y:\Projekty\MO\src\main\resources\bundles" />
       <recent name="Y:\Projekty\MO\src\main\java\pl\mo\window" />
       <recent name="Y:\Projekty\MO\src\main\java\pl\mo" />
       <recent name="Y:\Projekty\MO\src\resources" />
       <recent name="Y:\Projekty\MO\src\pl\mo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Y:\Projekty\MO\src\test\resources" />
+      <recent name="Y:\Projekty\MO" />
+      <recent name="Y:\Projekty\MO\src\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -479,7 +486,7 @@
     <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="pl.mo.strings.*" />
+          <option name="PATTERN" value="pl.mo.window.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -534,6 +541,56 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="ParaboloidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MO" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.ParaboloidTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="PolynomialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pl.mo.algorithms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MO" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
+      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.PolynomialTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="SteepestDescentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -548,56 +605,6 @@
       <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.SteepestDescentTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="SteepestDescentTest.getLocalMinimumArgument5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="MO" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.SteepestDescentTest" />
-      <option name="METHOD_NAME" value="getLocalMinimumArgument5" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="SteepestDescentTest.getLocalMinimumArgument6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="pl.mo.algorithms.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="MO" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pl.mo.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="pl.mo.algorithms.SteepestDescentTest" />
-      <option name="METHOD_NAME" value="getLocalMinimumArgument6" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -684,17 +691,17 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.LineSearchTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest.getLocalMinimumArgument6" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest.getLocalMinimumArgument5" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ParaboloidTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PolynomialTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest" />
       <item index="5" class="java.lang.String" itemvalue="Application.MainWindow" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest.getLocalMinimumArgument5" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SteepestDescentTest.getLocalMinimumArgument6" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PolynomialTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ParaboloidTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.LineSearchTest" />
       </list>
     </recent_temporary>
@@ -740,43 +747,45 @@
       <workItem from="1512671955367" duration="13332000" />
       <workItem from="1513282473180" duration="13826000" />
       <workItem from="1513296504111" duration="17000" />
+      <workItem from="1513360450815" duration="3072000" />
+      <workItem from="1513365343528" duration="3130000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SteepestDescentTest - 2017.12.07 at 21h 56m 00s.xml">
+    <history-entry file="GoldenSectionSearchTest - 2017.12.15 at 19h 17m 15s.xml">
+      <configuration name="GoldenSectionSearchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldenSectionSearchTest_getLocalMinimumArgument1 - 2017.12.15 at 19h 06m 15s.xml">
+      <configuration name="GoldenSectionSearchTest.getLocalMinimumArgument1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldenSectionSearchTest_getLocalMinimumArgument1 - 2017.12.15 at 19h 14m 06s.xml">
+      <configuration name="GoldenSectionSearchTest.getLocalMinimumArgument1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldenSectionSearchTest_getLocalMinimumArgument1 - 2017.12.15 at 19h 16m 00s.xml">
+      <configuration name="GoldenSectionSearchTest.getLocalMinimumArgument1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldenSectionSearchTest_getLocalMinimumArgument1 - 2017.12.15 at 19h 17m 05s.xml">
+      <configuration name="GoldenSectionSearchTest.getLocalMinimumArgument1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GridSearchTest - 2017.12.15 at 19h 19m 07s.xml">
+      <configuration name="GridSearchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LineSearchTest - 2017.12.15 at 19h 19m 48s.xml">
+      <configuration name="LineSearchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParaboloidTest - 2017.12.15 at 19h 20m 22s.xml">
+      <configuration name="ParaboloidTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PolynomialTest - 2017.12.15 at 19h 20m 34s.xml">
+      <configuration name="PolynomialTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SteepestDescentTest - 2017.12.15 at 19h 20m 56s.xml">
       <configuration name="SteepestDescentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest - 2017.12.07 at 21h 57m 47s.xml">
-      <configuration name="SteepestDescentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest - 2017.12.07 at 22h 07m 51s.xml">
-      <configuration name="SteepestDescentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 02m 40s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 03m 37s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 04m 12s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 04m 30s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 04m 48s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument5 - 2017.12.07 at 22h 06m 15s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SteepestDescentTest_getLocalMinimumArgument6 - 2017.12.07 at 22h 00m 08s.xml">
-      <configuration name="SteepestDescentTest.getLocalMinimumArgument6" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287160000" />
+    <option name="totallyTimeSpent" value="293362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,17 +801,18 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2743873" sideWeight="0.49436393" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2743873" sideWeight="0.49436393" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23546372" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2402691" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24988168" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -818,7 +828,6 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27449125" sideWeight="0.5056361" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -931,154 +940,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://Y:/Sources/MavenLocalRepository/org/mockito/mockito-core/2.12.0/mockito-core-2.12.0.jar!/org/mockito/internal/creation/bytebuddy/MockMethodInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime/log4j-application.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22338">
-          <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow-center.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/PrimitivesHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#ctor1#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#ctor2#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getValue2#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getNumberOfCalls#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getDerivativeCoefficients#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getDifferential1#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getDifferential2#0;class#PolynomialTest#0" expanded="false" />
-            <element signature="method#getRootByNewtonMethod#0;class#PolynomialTest#0" expanded="false" />
-            <marker date="1512495297006" expanded="false" signature="1665:2639" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/general/Assertions.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="method#compute1#0;class#DerivativeTest#0" expanded="false" />
-            <element signature="method#compute2#0;class#DerivativeTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="method#getParameterA#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterD#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterF#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterB#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterE#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterG#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getParameterC#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getValue1#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getValue2#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getDifferential1#0;class#ParaboloidTest#0" expanded="false" />
-            <element signature="method#getDifferential#0;class#ParaboloidTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/SteepestDescentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="82" column="73" lean-forward="false" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getLocalMinimumArgument1#0;class#SteepestDescentTest#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument2#0;class#SteepestDescentTest#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument3#0;class#SteepestDescentTest#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument4#0;class#SteepestDescentTest#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument5#0;class#SteepestDescentTest#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument6#0;class#SteepestDescentTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/LineSearchTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#performBacktracking1#0;class#LineSearchTest#0" expanded="false" />
-            <element signature="method#performBacktracking2#0;class#LineSearchTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/VectorsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="565" column="0" lean-forward="true" selection-start-line="565" selection-start-column="0" selection-end-line="565" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#cast1#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#getSumOfPowers#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#getNorm#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#negate#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#multiplyByScalar#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#add1#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#add2#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#cast2#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#multiplyAsMatrix1#0;class#VectorsTest#0" expanded="false" />
-            <element signature="method#multiplyAsMatrix2#0;class#VectorsTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="469" column="36" lean-forward="false" selection-start-line="469" selection-start-column="36" selection-end-line="469" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.controls/javafx/scene/control/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -1123,35 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow/StringsBundle.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow/MainWindowBundle_en_US.properties" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/AppBundles.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/strings.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#countUserDefinedGridSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#populateFunctionChart#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#setFunctionChartDefaultSettings#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#setDependencyChartDefaultSettings#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#setUiControlsDefaultSettings#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#populateDependencyChart#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#countUserDefinedRecursiveGridSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#countUserDefinedGoldenSectionSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
-            <element signature="method#countUserDefinedSteepestDescentLocalMinimum#0;class#MainWindowController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/strings/ClassBundle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1222,57 +1056,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GoldenSectionSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getLocalMinimumArgument#0;class#GoldenSectionSearch#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/GoldenSectionSearch_en_US.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/strings/GoldenSectionSearchBundle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#336#337#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#920#921#0" expanded="false" />
-            <element signature="e#949#950#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="30" column="87" lean-forward="false" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#0;class#GridSearch#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1293,61 +1080,6 @@
             <element signature="e#239#240#0" expanded="false" />
             <element signature="e#305#306#0" expanded="false" />
             <element signature="e#372#373#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="103" column="122" lean-forward="false" selection-start-line="103" selection-start-column="122" selection-end-line="103" selection-end-column="122" />
-          <folding>
-            <element signature="docComment;class#LineSearch#0" expanded="false" />
-            <element signature="docComment;field#BACKTRACKING_STEP#0;class#LineSearch#0" expanded="false" />
-            <element signature="docComment;field#BACKTRACKING_PARAMETER#0;class#LineSearch#0" expanded="false" />
-            <element signature="docComment;method#performBacktracking#0;class#LineSearch#0" expanded="false" />
-            <element signature="method#performBacktracking#0;class#LineSearch#0" expanded="false" />
-            <element signature="docComment;method#isArmijoConditionSatisfied#0;class#LineSearch#0" expanded="false" />
-            <element signature="method#isArmijoConditionSatisfied#0;class#LineSearch#0" expanded="false" />
-            <element signature="method#performBacktracking#1;class#LineSearch#0" expanded="false" />
-            <element signature="method#isArmijoConditionSatisfied#1;class#LineSearch#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;method#getLocalMinimumArgument#0;class#LocalMinimumSearchAlgorithm#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Paraboloid#0" expanded="false" />
-            <element signature="docComment;method#Paraboloid#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2284#2285#0" expanded="false" />
-            <element signature="docComment;method#Paraboloid#1;class#Paraboloid#0" expanded="false" />
-            <element signature="e#2517#2518#0" expanded="false" />
-            <element signature="e#2595#2596#0" expanded="false" />
-            <element signature="docComment;method#getValue#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#2742#2743#0" expanded="false" />
-            <element signature="e#2833#2834#0" expanded="false" />
-            <element signature="docComment;method#getValue#1;class#Paraboloid#0" expanded="false" />
-            <element signature="method#getValue#1;class#Paraboloid#0" expanded="false" />
-            <element signature="docComment;method#getDifferential#0;class#Paraboloid#0" expanded="false" />
-            <element signature="e#4217#4218#0" expanded="false" />
-            <element signature="e#4308#4309#0" expanded="false" />
-            <element signature="docComment;method#getDifferential#1;class#Paraboloid#0" expanded="false" />
-            <element signature="method#getDifferential#1;class#Paraboloid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1385,22 +1117,6 @@
         <state relative-caret-position="112">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getLocalMinimumArgument#0;class#SteepestDescent#0" expanded="false" />
-            <element signature="e#890#891#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="docComment;method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
-            <element signature="docComment;method#getIterationsNo#0;class#SteepestDescent#0" expanded="false" />
-            <element signature="method#getLocalMinimumArgument#2;class#SteepestDescent#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1450,11 +1166,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/strings/GoldenSectionSearchBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+          <folding>
+            <element signature="e#193#194#0" expanded="false" />
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#336#337#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/bundles/GoldenSectionSearch.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/tests/Assertions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="448">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#assertFloats#0;class#Assertions#0" expanded="false" />
             <element signature="method#assertDoubles#0;class#Assertions#0" expanded="false" />
             <element signature="method#assertDoubles#1;class#Assertions#0" expanded="false" />
@@ -1466,8 +1203,257 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/GoldenSectionSearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/bundles/GridSearch.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/bundles/MainWindow.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/bundles/Paraboloid.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/GridSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/LineSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/ParaboloidTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#getParameterA#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterD#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterF#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterB#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterE#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterG#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getParameterC#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getValue1#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getValue2#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getDifferential1#0;class#ParaboloidTest#0" expanded="false" />
+            <element signature="method#getDifferential#0;class#ParaboloidTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/PolynomialTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding>
+            <element signature="method#ctor1#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#ctor2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getValue1#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getValue2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getNumberOfCalls#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDerivativeCoefficients#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDifferential1#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getDifferential2#0;class#PolynomialTest#0" expanded="false" />
+            <element signature="method#getRootByNewtonMethod#0;class#PolynomialTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/algorithms/SteepestDescentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="82" column="73" lean-forward="false" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+          <folding>
+            <element signature="method#getLocalMinimumArgument1#0;class#SteepestDescentTest#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument2#0;class#SteepestDescentTest#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument3#0;class#SteepestDescentTest#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument4#0;class#SteepestDescentTest#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument5#0;class#SteepestDescentTest#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument6#0;class#SteepestDescentTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/mo/general/DerivativeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="method#compute1#0;class#DerivativeTest#0" expanded="false" />
+            <element signature="method#compute2#0;class#DerivativeTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GoldenSectionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#getLocalMinimumArgument#0;class#GoldenSectionSearch#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/GridSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="30" column="87" lean-forward="false" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
+          <folding>
+            <element signature="method#getLocalMinimumArgument#0;class#GridSearch#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LineSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="103" column="122" lean-forward="false" selection-start-line="103" selection-start-column="122" selection-end-line="103" selection-end-column="122" />
+          <folding>
+            <element signature="docComment;class#LineSearch#0" expanded="false" />
+            <element signature="docComment;field#BACKTRACKING_STEP#0;class#LineSearch#0" expanded="false" />
+            <element signature="docComment;field#BACKTRACKING_PARAMETER#0;class#LineSearch#0" expanded="false" />
+            <element signature="docComment;method#performBacktracking#0;class#LineSearch#0" expanded="false" />
+            <element signature="method#performBacktracking#0;class#LineSearch#0" expanded="false" />
+            <element signature="docComment;method#isArmijoConditionSatisfied#0;class#LineSearch#0" expanded="false" />
+            <element signature="method#isArmijoConditionSatisfied#0;class#LineSearch#0" expanded="false" />
+            <element signature="method#performBacktracking#1;class#LineSearch#0" expanded="false" />
+            <element signature="method#isArmijoConditionSatisfied#1;class#LineSearch#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/LocalMinimumSearchAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="docComment;method#getLocalMinimumArgument#0;class#LocalMinimumSearchAlgorithm#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/Paraboloid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#Paraboloid#0;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#Paraboloid#1;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#getValue#0;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#getValue#1;class#Paraboloid#0" expanded="false" />
+            <element signature="method#getValue#1;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#getDifferential#0;class#Paraboloid#0" expanded="false" />
+            <element signature="docComment;method#getDifferential#1;class#Paraboloid#0" expanded="false" />
+            <element signature="method#getDifferential#1;class#Paraboloid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/algorithms/SteepestDescent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#getLocalMinimumArgument#0;class#SteepestDescent#0" expanded="false" />
+            <element signature="docComment;method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument#1;class#SteepestDescent#0" expanded="false" />
+            <element signature="docComment;method#getIterationsNo#0;class#SteepestDescent#0" expanded="false" />
+            <element signature="method#getLocalMinimumArgument#2;class#SteepestDescent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="method#countUserDefinedGridSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#populateFunctionChart#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#setFunctionChartDefaultSettings#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#setDependencyChartDefaultSettings#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#setUiControlsDefaultSettings#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#populateDependencyChart#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#countUserDefinedRecursiveGridSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#countUserDefinedGoldenSectionSearchLocalMinimum#0;class#MainWindowController#0" expanded="false" />
+            <element signature="method#countUserDefinedSteepestDescentLocalMinimum#0;class#MainWindowController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/mo/window/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="16">
+            <caret line="1" column="63" lean-forward="false" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1478,11 +1464,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
+          <last-edited>MO</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1552,6 +1539,7 @@
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="$PROJECT_DIR$" />
+    <option value="jfx:jar" />
     <option value="sonar:sonar" />
     <option value="compile -Xlint:unchecked" />
     <option value="test -Xlint:unchecked" />
