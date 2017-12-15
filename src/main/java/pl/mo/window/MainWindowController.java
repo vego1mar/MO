@@ -21,11 +21,12 @@ import pl.mo.algorithms.SteepestDescent;
 import pl.mo.general.PrimitivesHelper;
 import pl.mo.general.ReflectionHelper;
 import pl.mo.algorithms.GridSearch;
+import pl.mo.strings.MainWindowBundle;
 
 public class MainWindowController {
 
     private static final Logger log = Logger.getLogger(MainWindowController.class);
-    private static final String TXT_IMPROPER_VALUE = "Improper value.";
+    private static final MainWindowBundle bundle = MainWindow.getBundle();
 
     @FXML private TextField gsLeftArgument;
     @FXML private TextField gsRightArgument;
@@ -57,7 +58,6 @@ public class MainWindowController {
     @FXML private TextField sdResultAccuracy;
     @FXML private TextField sdIterations;
     @FXML private TextField sdFunctionCalls;
-    @FXML private LineChart<Double, Double> sdFunctionChart;
 
     @FXML
     private void countUserDefinedGridSearchLocalMinimum() {
@@ -66,7 +66,7 @@ public class MainWindowController {
         Double accuracy = PrimitivesHelper.getDouble(gsAccuracy.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -74,8 +74,8 @@ public class MainWindowController {
         Double localMinimum = gridSearch.getLocalMinimumArgument(leftArgument, rightArgument, accuracy);
 
         if (localMinimum == null) {
-            gsLocalMinimum.setText("N/A");
-            new Alert(AlertType.ERROR, "The value has not been found.").showAndWait();
+            gsLocalMinimum.setText(bundle.getAbbreviationNotApplicable());
+            new Alert(AlertType.ERROR, bundle.getTextValueNotFound()).showAndWait();
             return;
         }
 
@@ -103,19 +103,18 @@ public class MainWindowController {
         lineChart.getXAxis().setAutoRanging(true);
         lineChart.getYAxis().setAutoRanging(true);
         lineChart.setLegendVisible(false);
-        lineChart.setTitle("The provided function in a specified interval");
+        lineChart.setTitle(bundle.getLineChartsTitle());
     }
 
     private void setDependencyChartDefaultSettings() {
         gsDependencyChart.setLegendVisible(true);
-        gsDependencyChart.setTitle("The function calls dependency on the accuracy");
+        gsDependencyChart.setTitle(bundle.getDependencyChartTitle());
     }
 
     public void setUiControlsDefaultSettings() {
         setFunctionChartDefaultSettings(gsFunctionChart);
         setFunctionChartDefaultSettings(recgsFunctionChart);
         setFunctionChartDefaultSettings(gssFunctionChart);
-        setFunctionChartDefaultSettings(sdFunctionChart);
         setDependencyChartDefaultSettings();
         populateDependencyChart();
     }
@@ -144,22 +143,22 @@ public class MainWindowController {
         Integer intervalDivisionsNo = PrimitivesHelper.getInteger(recgsIntervalDivisions.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null || intervalDivisionsNo == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
         GridSearch gridSearch = new GridSearch();
-        Double localMinimum = null;
+        Double localMinimum;
 
         try {
             localMinimum = gridSearch.getLocalMinimumArgument(leftArgument, rightArgument, accuracy, intervalDivisionsNo);
         } catch (NoSuchElementException ex) {
             log.error(ex.toString());
-            new Alert(AlertType.ERROR, "Left argument is greater than right argument.").showAndWait();
+            new Alert(AlertType.ERROR, bundle.getErrorIntervalArgumentsMismatch()).showAndWait();
             return;
         } catch (IllegalArgumentException ex) {
             log.error(ex.toString());
-            new Alert(AlertType.ERROR, "The number of interval divisions is lower than or equal to zero.").showAndWait();
+            new Alert(AlertType.ERROR, bundle.getErrorNegativeIntervalDivisionsNo()).showAndWait();
             return;
         }
 
@@ -176,7 +175,7 @@ public class MainWindowController {
         Double accuracy = PrimitivesHelper.getDouble(gssAccuracy.getText());
 
         if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -187,7 +186,7 @@ public class MainWindowController {
             localMinimum = gss.getLocalMinimumArgument(leftArgument, rightArgument, accuracy);
         } catch (IllegalArgumentException ex) {
             log.error(ex.toString());
-            new Alert(AlertType.ERROR, "Left argument is greater than right argument.").showAndWait();
+            new Alert(AlertType.ERROR, bundle.getErrorIntervalArgumentsMismatch()).showAndWait();
             return;
         }
 
@@ -205,7 +204,7 @@ public class MainWindowController {
         boolean isBacktracked = sdUseBacktracking.isSelected();
 
         if (startPointX == null || startPointY == null) {
-            new Alert(AlertType.ERROR, TXT_IMPROPER_VALUE + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
 
@@ -222,7 +221,6 @@ public class MainWindowController {
         sdIterations.setText(String.valueOf(sd.getIterationsNo()));
         sdFunctionCalls.setText(String.valueOf(sd.getScoreFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ", backtracking = " + isBacktracked + ") = " + localMinimum);
-        // TODO: populate function chart with a 3D chart using Orson Charts
     }
 
 }

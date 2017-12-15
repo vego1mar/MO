@@ -3,6 +3,7 @@ package pl.mo.general;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class ReflectionHelper {
@@ -45,7 +46,7 @@ public final class ReflectionHelper {
         return null;
     }
 
-    private static void makeAccessible(Field field) {
+    private static void makeAccessible(@NotNull Field field) {
         if (!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers())) {
             field.setAccessible(true);
         }

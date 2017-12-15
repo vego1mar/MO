@@ -3,8 +3,11 @@ package pl.mo.algorithms;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import pl.mo.strings.GridSearchBundle;
 
 public strictfp class GridSearch extends LocalMinimumSearchAlgorithm {
+
+    private final GridSearchBundle bundle = new GridSearchBundle();
 
     @Override
     public Double getLocalMinimumArgument(double left, double right, double epsilon) {
@@ -25,7 +28,7 @@ public strictfp class GridSearch extends LocalMinimumSearchAlgorithm {
      */
     public double getLocalMinimumArgument(double left, double right, double epsilon, int delta) {
         if (delta <= 0) {
-            throw new IllegalArgumentException("Argument 'delta' must be greater than zero.");
+            throw new IllegalArgumentException(bundle.getErrorNegativeArgumentDelta());
         }
 
         if (Math.abs(right - left) <= Math.abs(epsilon)) {

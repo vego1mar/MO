@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import pl.mo.window.AppTextsStockroom;
+import pl.mo.strings.ParaboloidBundle;
 
 /**
  * Provides ways to define a real-based or integer-based elliptic paraboloid.<p></p>
@@ -26,6 +26,7 @@ import pl.mo.window.AppTextsStockroom;
  */
 public strictfp class Paraboloid extends ScoreFunction {
 
+    private ParaboloidBundle bundle = new ParaboloidBundle();
     private Double[] parameters;
 
     /**
@@ -62,7 +63,7 @@ public strictfp class Paraboloid extends ScoreFunction {
      */
     @Override
     public double getValue(double argument) {
-        throw new UnsupportedOperationException(AppTextsStockroom.getInstance().getParaboloid().getMsgOverwrittenMethod());
+        throw new UnsupportedOperationException(bundle.getTextOverwrittenMethods());
     }
 
     /**
@@ -119,7 +120,7 @@ public strictfp class Paraboloid extends ScoreFunction {
      */
     @Override
     public double getDifferential(double argument) {
-        throw new UnsupportedOperationException(AppTextsStockroom.getInstance().getParaboloid().getMsgOverwrittenMethod());
+        throw new UnsupportedOperationException(bundle.getTextOverwrittenMethods());
     }
 
     /**
