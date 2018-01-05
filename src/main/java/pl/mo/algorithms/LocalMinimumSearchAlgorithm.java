@@ -1,5 +1,8 @@
 package pl.mo.algorithms;
 
+import pl.mo.functions.ObjectiveFunction;
+import pl.mo.functions.Polynomial;
+
 public abstract class LocalMinimumSearchAlgorithm {
 
     protected ObjectiveFunction objectiveFunction;

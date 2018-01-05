@@ -6,6 +6,8 @@ import static org.junit.Assert.assertThat;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
+import pl.mo.functions.Paraboloid;
+import pl.mo.functions.Polynomial;
 import pl.mo.general.Derivative;
 import pl.mo.general.Vectors;
 import pl.mo.tests.Assertions;

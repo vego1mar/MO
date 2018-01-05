@@ -7,10 +7,12 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pl.mo.strings.VectorsBundle;
 
 public strictfp class Vectors {
 
     private static final Logger log = Logger.getLogger(Vectors.class);
+    private static final VectorsBundle bundle = new VectorsBundle();
 
     private Vectors() {
         // This should be a utility class.
@@ -214,8 +216,7 @@ public strictfp class Vectors {
         }
 
         if (vector1.size() != vector2.size()) {
-            // TODO: move this into resource bundle
-            throw new IllegalArgumentException("Vectors sizes are not equal.");
+            throw new IllegalArgumentException(bundle.getWarningVectorsSizesNotEqual());
         }
 
         Class<?> vectorTypes = vector1.get(0).getClass();
@@ -280,8 +281,7 @@ public strictfp class Vectors {
         }
 
         if (vector1.size() != vector2.size()) {
-            // TODO: Move this into resource bundle
-            throw new IllegalArgumentException("Vectors lengths are not equal.");
+            throw new IllegalArgumentException(bundle.getWarningVectorsSizesNotEqual());
         }
 
         Class<?> vectorTypes = vector2.get(0).getClass();
@@ -344,14 +344,13 @@ public strictfp class Vectors {
             return false;
         }
 
-        if (vector1.size() != vector2.size() || vector1.get(0).getClass() != vector2.get(0).getClass()) {
+        if (vector1.size() != vector2.size()) {
             return false;
         }
 
         Class<?> vectorTypes = vector1.get(0).getClass();
         int comparingResult = 0;
 
-        // TODO: missing unit test
         try {
             for (int i = 0; i < vector1.size(); i++) {
                 if (vectorTypes == Byte.class) {

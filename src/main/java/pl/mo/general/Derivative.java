@@ -1,7 +1,7 @@
 package pl.mo.general;
 
 import org.jetbrains.annotations.Contract;
-import pl.mo.algorithms.ObjectiveFunction;
+import pl.mo.functions.ObjectiveFunction;
 
 public final strictfp class Derivative {
 

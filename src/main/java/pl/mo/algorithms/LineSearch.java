@@ -3,6 +3,7 @@ package pl.mo.algorithms;
 import java.util.ArrayList;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import pl.mo.functions.ObjectiveFunction;
 import pl.mo.general.Vectors;
 
 /**

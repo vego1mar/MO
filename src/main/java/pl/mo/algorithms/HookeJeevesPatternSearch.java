@@ -1,9 +1,13 @@
 package pl.mo.algorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import pl.mo.functions.Himmelblau;
+import pl.mo.functions.ObjectiveFunction;
+import pl.mo.functions.Polynomial;
 import pl.mo.general.Vectors;
 import pl.mo.strings.HookeJeevesPatternSearchBundle;
 
@@ -16,8 +20,24 @@ public strictfp class HookeJeevesPatternSearch extends LocalMinimumSearchAlgorit
     private AlgorithmVariables variables = new AlgorithmVariables();
     private AlgorithmStep nextStep = AlgorithmStep.TERMINATION;
 
+    public HookeJeevesPatternSearch() {
+        objectiveFunction = new Himmelblau();
+    }
+
+    @Override
+    public void setObjectiveFunction(ObjectiveFunction objectiveFunction) {
+        if (objectiveFunction instanceof Polynomial) {
+            return;
+        }
+
+        super.setObjectiveFunction(objectiveFunction);
+    }
+
     public List<Double> getLocalMinimumArgument(List<Double> startPoint) {
-        // TODO: missing unit test
+        if (startPoint == null || startPoint.isEmpty()) {
+            startPoint = new ArrayList<>(Arrays.asList(0.0, 0.0));
+        }
+
         return getLocalMinimumArgument(startPoint, getIncrementVector(startPoint.size()));
     }
 
@@ -46,14 +66,13 @@ public strictfp class HookeJeevesPatternSearch extends LocalMinimumSearchAlgorit
 
         variables.startPoint = startPoint;
         variables.incrementVector = incrementVector;
-        objectiveFunction.numberOfCalls = 0;
         performStep(AlgorithmStep.PREPARATIONS);
 
         while (nextStep != AlgorithmStep.TERMINATION) {
             performStep(nextStep);
         }
 
-        return variables.nextPoint;
+        return variables.currentPoint;
     }
 
     private void performStep(@NotNull AlgorithmStep step) {
@@ -135,12 +154,12 @@ public strictfp class HookeJeevesPatternSearch extends LocalMinimumSearchAlgorit
         nextStep = AlgorithmStep.CONVERGENCE_CHECK;
     }
 
-    private List<Double> performExploratoryMove(List<Double> basePoint) {
-        List<Double> point = new ArrayList<>(basePoint);
+    private List<Double> performExploratoryMove(@NotNull List<Double> basePoint) {
         ExploratoryMoveMinimum minimum = new ExploratoryMoveMinimum();
+        minimum.argument = basePoint;
 
         for (int i = 0; i < basePoint.size(); i++) {
-            minimum = getMinimumForDimension(point, i);
+            minimum = getMinimumForDimension(minimum.argument, i);
         }
 
         variables.isExploratoryMoveSuccessful = !Vectors.isAs(minimum.argument, basePoint);

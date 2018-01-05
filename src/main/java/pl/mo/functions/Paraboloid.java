@@ -1,4 +1,4 @@
-package pl.mo.algorithms;
+package pl.mo.functions;
 
 import java.util.ArrayList;
 import java.util.Arrays;

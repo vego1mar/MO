@@ -2,13 +2,14 @@ package pl.mo.algorithms;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;
-import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.spy;
 
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
+import pl.mo.functions.Paraboloid;
+import pl.mo.functions.Polynomial;
 import pl.mo.general.ReflectionHelper;
 import pl.mo.tests.Assertions;
 

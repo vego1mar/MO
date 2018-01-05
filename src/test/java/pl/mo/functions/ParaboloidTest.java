@@ -1,4 +1,4 @@
-package pl.mo.algorithms;
+package pl.mo.functions;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;

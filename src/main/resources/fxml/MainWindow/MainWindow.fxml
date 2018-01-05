@@ -473,6 +473,106 @@
                   </ScrollPane>
                </content>
             </Tab>
+            <Tab closable="false" text="HJ">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" vmax="100.0">
+                     <content>
+                        <VBox prefHeight="567.0" prefWidth="368.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Hooke-Jeeves pattern search">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="f(x,y) = 2(x-2)² + (y-1)² + 3" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Start point x:" />
+                                    <Region prefHeight="40.0" prefWidth="40.0" />
+                                    <TextField fx:id="hjStartPointX" promptText="0.0" text="0.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Start point y:" />
+                                    <Region prefHeight="40.0" prefWidth="40.0" />
+                                    <TextField fx:id="hjStartPointY" promptText="0.0" text="0.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Region prefHeight="40.0" prefWidth="135.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" text="Result:" />
+                                    <Region prefHeight="40.0" prefWidth="80.0" />
+                                    <TextField fx:id="hjResult" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="585.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Iterations:" />
+                                    <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="62.0" />
+                                    <TextField fx:id="hjIterations" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" text="Function calls:" />
+                                    <Region prefHeight="40.0" prefWidth="40.0" />
+                                    <TextField fx:id="hjFunctionCalls" editable="false" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="574.0">
+                                 <children>
+                                    <Region prefHeight="40.0" prefWidth="138.0" />
+                                    <Button mnemonicParsing="false" onAction="#countUserDefinedHookeJeevesPatternSearchLocalMinimum" text="Count local minimum" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </center>

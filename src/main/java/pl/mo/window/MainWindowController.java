@@ -15,8 +15,9 @@ import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import pl.mo.algorithms.GoldenSectionSearch;
-import pl.mo.algorithms.Paraboloid;
-import pl.mo.algorithms.Polynomial;
+import pl.mo.algorithms.HookeJeevesPatternSearch;
+import pl.mo.functions.Paraboloid;
+import pl.mo.functions.Polynomial;
 import pl.mo.algorithms.SteepestDescent;
 import pl.mo.general.PrimitivesHelper;
 import pl.mo.general.ReflectionHelper;
@@ -59,31 +60,11 @@ public class MainWindowController {
     @FXML private TextField sdIterations;
     @FXML private TextField sdFunctionCalls;
 
-    @FXML
-    private void countUserDefinedGridSearchLocalMinimum() {
-        Double leftArgument = PrimitivesHelper.getDouble(gsLeftArgument.getText());
-        Double rightArgument = PrimitivesHelper.getDouble(gsRightArgument.getText());
-        Double accuracy = PrimitivesHelper.getDouble(gsAccuracy.getText());
-
-        if (leftArgument == null || rightArgument == null || accuracy == null) {
-            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
-            return;
-        }
-
-        GridSearch gridSearch = new GridSearch();
-        Double localMinimum = gridSearch.getLocalMinimumArgument(leftArgument, rightArgument, accuracy);
-
-        if (localMinimum == null) {
-            gsLocalMinimum.setText(bundle.getAbbreviationNotApplicable());
-            new Alert(AlertType.ERROR, bundle.getTextValueNotFound()).showAndWait();
-            return;
-        }
-
-        gsLocalMinimum.setText(localMinimum.toString());
-        gsNumberOfCalls.setText(String.valueOf(gridSearch.getObjectiveFunction().getNumberOfCalls()));
-        log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, (Polynomial) gridSearch.getObjectiveFunction());
-    }
+    @FXML private TextField hjStartPointX;
+    @FXML private TextField hjStartPointY;
+    @FXML private TextField hjResult;
+    @FXML private TextField hjIterations;
+    @FXML private TextField hjFunctionCalls;
 
     @FXML
     private void populateFunctionChart(Double left, Double right, LineChart<Double, Double> lineChart, Polynomial scoreFunction) {
@@ -133,6 +114,32 @@ public class MainWindowController {
         }
 
         log.info(ReflectionHelper.getCurrentMethodName() + "()");
+    }
+
+    @FXML
+    private void countUserDefinedGridSearchLocalMinimum() {
+        Double leftArgument = PrimitivesHelper.getDouble(gsLeftArgument.getText());
+        Double rightArgument = PrimitivesHelper.getDouble(gsRightArgument.getText());
+        Double accuracy = PrimitivesHelper.getDouble(gsAccuracy.getText());
+
+        if (leftArgument == null || rightArgument == null || accuracy == null) {
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            return;
+        }
+
+        GridSearch gridSearch = new GridSearch();
+        Double localMinimum = gridSearch.getLocalMinimumArgument(leftArgument, rightArgument, accuracy);
+
+        if (localMinimum == null) {
+            gsLocalMinimum.setText(bundle.getAbbreviationNotApplicable());
+            new Alert(AlertType.ERROR, bundle.getTextValueNotFound()).showAndWait();
+            return;
+        }
+
+        gsLocalMinimum.setText(localMinimum.toString());
+        gsNumberOfCalls.setText(String.valueOf(gridSearch.getObjectiveFunction().getNumberOfCalls()));
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
+        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, (Polynomial) gridSearch.getObjectiveFunction());
     }
 
     @FXML
@@ -200,13 +207,14 @@ public class MainWindowController {
     private void countUserDefinedSteepestDescentLocalMinimum() {
         Double startPointX = PrimitivesHelper.getDouble(sdStartPointX.getText());
         Double startPointY = PrimitivesHelper.getDouble(sdStartPointY.getText());
-        List<Double> startPoint = Arrays.asList(startPointX, startPointY);
-        boolean isBacktracked = sdUseBacktracking.isSelected();
 
         if (startPointX == null || startPointY == null) {
             new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
             return;
         }
+
+        List<Double> startPoint = Arrays.asList(startPointX, startPointY);
+        boolean isBacktracked = sdUseBacktracking.isSelected();
 
         SteepestDescent sd = new SteepestDescent();
         sd.setObjectiveFunction(new Paraboloid());
@@ -221,6 +229,35 @@ public class MainWindowController {
         sdIterations.setText(String.valueOf(sd.getIterationsNo()));
         sdFunctionCalls.setText(String.valueOf(sd.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ", backtracking = " + isBacktracked + ") = " + localMinimum);
+    }
+
+    @FXML
+    private void countUserDefinedHookeJeevesPatternSearchLocalMinimum() {
+        Double startPointX = PrimitivesHelper.getDouble(hjStartPointX.getText());
+        Double startPointY = PrimitivesHelper.getDouble(hjStartPointY.getText());
+
+        if (startPointX == null || startPointY == null) {
+            new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage()).showAndWait();
+            return;
+        }
+
+        List<Double> startPoint = Arrays.asList(startPointX, startPointY);
+        HookeJeevesPatternSearch hj = new HookeJeevesPatternSearch();
+        hj.setObjectiveFunction(new Paraboloid());
+        List<Double> localMinimum;
+
+        try {
+            localMinimum = hj.getLocalMinimumArgument(startPoint);
+        } catch (IllegalArgumentException | NullPointerException ex) {
+            log.error(ex.toString());
+            new Alert(AlertType.ERROR, ex.getMessage()).showAndWait();
+            return;
+        }
+
+        hjResult.setText(String.valueOf(localMinimum));
+        hjIterations.setText(String.valueOf(hj.getIterationsNo()));
+        hjFunctionCalls.setText(String.valueOf(hj.getObjectiveFunction().getNumberOfCalls()));
+        log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ") = " + localMinimum);
     }
 
 }

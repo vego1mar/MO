@@ -397,12 +397,12 @@ public class VectorsTest {
         Float floatToFloat = Vectors.cast(FLOAT_VALUE, Float.class);
         Double floatToDouble = Vectors.cast(FLOAT_VALUE, Double.class);
 
-        Byte doubleToByte = Vectors.cast(FLOAT_VALUE, Byte.class);
-        Short doubleToShort = Vectors.cast(FLOAT_VALUE, Short.class);
-        Integer doubleToInteger = Vectors.cast(FLOAT_VALUE, Integer.class);
-        Long doubleToLong = Vectors.cast(FLOAT_VALUE, Long.class);
-        Float doubleToFloat = Vectors.cast(FLOAT_VALUE, Float.class);
-        Double doubleToDouble = Vectors.cast(FLOAT_VALUE, Double.class);
+        Byte doubleToByte = Vectors.cast(DOUBLE_VALUE, Byte.class);
+        Short doubleToShort = Vectors.cast(DOUBLE_VALUE, Short.class);
+        Integer doubleToInteger = Vectors.cast(DOUBLE_VALUE, Integer.class);
+        Long doubleToLong = Vectors.cast(DOUBLE_VALUE, Long.class);
+        Float doubleToFloat = Vectors.cast(DOUBLE_VALUE, Float.class);
+        Double doubleToDouble = Vectors.cast(DOUBLE_VALUE, Double.class);
 
         // then
         Assert.assertNotNull(byteToByte);
@@ -568,6 +568,69 @@ public class VectorsTest {
     public void multiplyAsMatrix2() {
         // when
         Number value1 = Vectors.multiplyAsMatrix(Collections.singletonList(1.0), Arrays.asList(0.0, -1.0));
+    }
+
+    @Test
+    public void isAs() {
+        // given
+        final List<Byte> bytes1 = Arrays.asList((byte) -1, (byte) 0, (byte) 1);
+        final List<Short> shorts1 = Arrays.asList((short) -10_000, (short) 0, (short) 10_000);
+        final List<Integer> integers1 = Arrays.asList(-100_000, 0, 100_000);
+        final List<Long> longs1 = Arrays.asList(-10_000_000_000L, 0L, 10_000_000_000L);
+        final List<Float> floats1 = Arrays.asList(-1.1f, 0.0f, 1.1f);
+        final List<Double> doubles1 = Arrays.asList(-1.1, 0.0, 1.1);
+        List<Byte> bytes2 = new ArrayList<>(Arrays.asList((byte) -1, (byte) 0, (byte) 1));
+        List<Short> shorts2 = new ArrayList<>(Arrays.asList((short) -10_000, (short) 0, (short) 10_000));
+        List<Integer> integers2 = new ArrayList<>(Arrays.asList(-100_000, 0, 100_000));
+        List<Long> longs2 = new ArrayList<>(Arrays.asList(-10_000_000_000L, 0L, 10_000_000_000L));
+        List<Float> floats2 = new ArrayList<>(Arrays.asList(-1.1f, 0.0f, 1.1f));
+        List<Double> doubles2 = new ArrayList<>(Arrays.asList(-1.1, 0.0, 1.1));
+
+        // when
+        boolean result1 = Vectors.isAs(null, Collections.emptyList());
+        boolean result2 = Vectors.isAs(Collections.emptyList(), null);
+        boolean result3 = Vectors.isAs(null, null);
+        boolean result4 = Vectors.isAs(Collections.emptyList(), Collections.singletonList(0));
+
+        boolean result5 = Vectors.isAs(bytes1, bytes2);
+        boolean result6 = Vectors.isAs(shorts1, shorts2);
+        boolean result7 = Vectors.isAs(integers1, integers2);
+        boolean result8 = Vectors.isAs(longs1, longs2);
+        boolean result9 = Vectors.isAs(floats1, floats2);
+        boolean result10 = Vectors.isAs(doubles1, doubles2);
+
+        boolean result11 = Vectors.isAs(bytes1, Collections.singletonList((byte) 0));
+        boolean result12 = Vectors.isAs(shorts1, Collections.singletonList((short) 0));
+        boolean result13 = Vectors.isAs(integers1, Collections.singletonList(0));
+        boolean result14 = Vectors.isAs(longs1, Collections.singletonList(0L));
+        boolean result15 = Vectors.isAs(floats1, Collections.singletonList(0.0f));
+        boolean result16 = Vectors.isAs(doubles1, Collections.singletonList(0.0));
+
+        boolean result17 = Vectors.isAs(doubles1, Arrays.asList(-1.1, 0.000000000001, 1.1));
+        boolean result18 = Vectors.isAs(doubles1, Arrays.asList(-1.100000000000001, 0.0, 1.1));
+
+        // then
+        Assert.assertFalse(result1);
+        Assert.assertFalse(result2);
+        Assert.assertTrue(result3);
+        Assert.assertFalse(result4);
+
+        Assert.assertTrue(result5);
+        Assert.assertTrue(result6);
+        Assert.assertTrue(result7);
+        Assert.assertTrue(result8);
+        Assert.assertTrue(result9);
+        Assert.assertTrue(result10);
+
+        Assert.assertFalse(result11);
+        Assert.assertFalse(result12);
+        Assert.assertFalse(result13);
+        Assert.assertFalse(result14);
+        Assert.assertFalse(result15);
+        Assert.assertFalse(result16);
+
+        Assert.assertFalse(result17);
+        Assert.assertFalse(result18);
     }
 
 }

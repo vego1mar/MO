@@ -4,7 +4,7 @@ import static org.hamcrest.Matchers.closeTo;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.mo.algorithms.Polynomial;
+import pl.mo.functions.Polynomial;
 
 public class DerivativeTest {
 

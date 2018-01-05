@@ -1,4 +1,4 @@
-package pl.mo.algorithms;
+package pl.mo.functions;
 
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.is;
