@@ -24,7 +24,7 @@ import pl.mo.strings.ParaboloidBundle;
  *
  * @version 1.0
  */
-public strictfp class Paraboloid extends ScoreFunction {
+public strictfp class Paraboloid extends ObjectiveFunction {
 
     private ParaboloidBundle bundle = new ParaboloidBundle();
     private Double[] parameters;

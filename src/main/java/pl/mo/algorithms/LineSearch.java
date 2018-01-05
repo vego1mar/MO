@@ -43,7 +43,7 @@ public final strictfp class LineSearch {
      * @return the function minimizer <b>t</b>, that is namely a step size
      * @since 1.1
      */
-    public static double performBacktracking(ScoreFunction f, double x, double d) {
+    public static double performBacktracking(ObjectiveFunction f, double x, double d) {
         int k = 0;
         double alfa = 1.0;
         double x0 = x;
@@ -75,14 +75,14 @@ public final strictfp class LineSearch {
      * @return <b>true</b> when this condition has been fulfilled, <b>false</b> otherwise
      * @since 1.1
      */
-    private static boolean isArmijoConditionSatisfied(@NotNull ScoreFunction f, double x, double t, double d) {
+    private static boolean isArmijoConditionSatisfied(@NotNull ObjectiveFunction f, double x, double t, double d) {
         double dg = f.getDifferential(x);
         double lhs = f.getValue(x + (t * d));
         double rhs = f.getValue(x) + (BACKTRACKING_PARAMETER * t * dg * d);
         return lhs <= rhs;
     }
 
-    public static double performBacktracking(ScoreFunction f, List<Double> x, List<Double> d) {
+    public static double performBacktracking(ObjectiveFunction f, List<Double> x, List<Double> d) {
         int k = 0;
         double alfa = 1.0;
         List<Double> x0 = new ArrayList<>(x);
@@ -101,7 +101,7 @@ public final strictfp class LineSearch {
         return alfa;
     }
 
-    private static boolean isArmijoConditionSatisfied(@NotNull ScoreFunction f, List<Double> x, double t, List<Double> d) {
+    private static boolean isArmijoConditionSatisfied(@NotNull ObjectiveFunction f, List<Double> x, double t, List<Double> d) {
         List<Double> lhsVector = Vectors.add(x, Vectors.multiplyByScalar(d, t));
         Double lhs = Vectors.cast(f.getValue(lhsVector.get(0), lhsVector.get(1)), Double.class);
         Double leftRhs = Vectors.cast(f.getValue(x.get(0), x.get(1)), Double.class);

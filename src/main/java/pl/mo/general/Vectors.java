@@ -214,6 +214,7 @@ public strictfp class Vectors {
         }
 
         if (vector1.size() != vector2.size()) {
+            // TODO: move this into resource bundle
             throw new IllegalArgumentException("Vectors sizes are not equal.");
         }
 
@@ -279,6 +280,7 @@ public strictfp class Vectors {
         }
 
         if (vector1.size() != vector2.size()) {
+            // TODO: Move this into resource bundle
             throw new IllegalArgumentException("Vectors lengths are not equal.");
         }
 
@@ -330,6 +332,52 @@ public strictfp class Vectors {
         }
 
         return null;
+    }
+
+    @Contract("null, null -> true; null, !null -> false; !null, null -> false")
+    public static <T extends Number> boolean isAs(List<T> vector1, List<T> vector2) {
+        if (vector1 == null && vector2 == null) {
+            return true;
+        }
+
+        if (vector1 == null || vector2 == null) {
+            return false;
+        }
+
+        if (vector1.size() != vector2.size() || vector1.get(0).getClass() != vector2.get(0).getClass()) {
+            return false;
+        }
+
+        Class<?> vectorTypes = vector1.get(0).getClass();
+        int comparingResult = 0;
+
+        // TODO: missing unit test
+        try {
+            for (int i = 0; i < vector1.size(); i++) {
+                if (vectorTypes == Byte.class) {
+                    comparingResult = Byte.compare(vector1.get(i).byteValue(), vector2.get(i).byteValue());
+                } else if (vectorTypes == Short.class) {
+                    comparingResult = Short.compare(vector1.get(i).shortValue(), vector2.get(i).shortValue());
+                } else if (vectorTypes == Integer.class) {
+                    comparingResult = Integer.compare(vector1.get(i).intValue(), vector2.get(i).intValue());
+                } else if (vectorTypes == Long.class) {
+                    comparingResult = Long.compare(vector1.get(i).longValue(), vector2.get(i).longValue());
+                } else if (vectorTypes == Float.class) {
+                    comparingResult = Float.compare(vector1.get(i).floatValue(), vector2.get(i).floatValue());
+                } else if (vectorTypes == Double.class) {
+                    comparingResult = Double.compare(vector1.get(i).doubleValue(), vector2.get(i).doubleValue());
+                }
+
+                if (comparingResult != 0) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException | NullPointerException ex) {
+            log.error(ex.getMessage());
+            return false;
+        }
+
+        return true;
     }
 
 }

@@ -17,7 +17,7 @@ import pl.mo.general.Power;
  *
  * @version 1.3
  */
-public strictfp class Polynomial extends ScoreFunction {
+public strictfp class Polynomial extends ObjectiveFunction {
 
     public static final int MAXIMUM_ITERATIONS = 23_459;
     public static final double ROOT_FINDING_PRECISION = 10.0E-14;

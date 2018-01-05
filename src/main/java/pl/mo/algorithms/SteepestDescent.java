@@ -19,15 +19,6 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
     private int iterationsNo;
 
     /**
-     * @throws UnsupportedOperationException always
-     * @since 1.0
-     */
-    @Override
-    public Double getLocalMinimumArgument(double left, double right, double epsilon) {
-        throw new UnsupportedOperationException("Method overwritten, yet has no use.");
-    }
-
-    /**
      * Steepest descent algorithm specialization for real one-dimensional functions.
      * The method performs the default specified number of iterations until the gradient convergence condition
      * will be satisfied.
@@ -48,7 +39,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
 
         while (k < MAXIMUM_ITERATIONS) {
             x = nextX;
-            double dg = scoreFunction.getDifferential(x);
+            double dg = objectiveFunction.getDifferential(x);
             double normL2 = Math.abs(dg);
             double direction = -dg;
 
@@ -58,7 +49,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
             }
 
             if (!isConstantMinimizerAllowed) {
-                minimizer = LineSearch.performBacktracking(scoreFunction, x, direction);
+                minimizer = LineSearch.performBacktracking(objectiveFunction, x, direction);
             }
 
             nextX = x + (minimizer * direction);
@@ -69,13 +60,6 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
         return nextX;
     }
 
-    /**
-     * Gets the number of iterations for the most recent function call.
-     *
-     * @return the number of iterations performed
-     * @see #getLocalMinimumArgument(double, boolean)
-     * @since 1.1
-     */
     public int getIterationsNo() {
         return iterationsNo;
     }
@@ -90,7 +74,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
 
         while (k < MAXIMUM_ITERATIONS) {
             x = nextX;
-            List<Number> dg = scoreFunction.getDifferential(x.get(0), x.get(1));
+            List<Number> dg = objectiveFunction.getDifferential(x.get(0), x.get(1));
             Double normL2 = Vectors.getNorm(dg, 2);
             List<Number> direction = Vectors.negate(dg);
 
@@ -100,7 +84,7 @@ public strictfp class SteepestDescent extends LocalMinimumSearchAlgorithm {
             }
 
             if (!isConstantMinimizerAllowed) {
-                minimizer = LineSearch.performBacktracking(scoreFunction, x, Vectors.cast(direction, Double.class));
+                minimizer = LineSearch.performBacktracking(objectiveFunction, x, Vectors.cast(direction, Double.class));
             }
 
             nextX.set(0, x.get(0) + (minimizer * direction.get(0).doubleValue()));

@@ -80,9 +80,9 @@ public class MainWindowController {
         }
 
         gsLocalMinimum.setText(localMinimum.toString());
-        gsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
+        gsNumberOfCalls.setText(String.valueOf(gridSearch.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, (Polynomial) gridSearch.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, gsFunctionChart, (Polynomial) gridSearch.getObjectiveFunction());
     }
 
     @FXML
@@ -128,7 +128,7 @@ public class MainWindowController {
             series.setName(String.valueOf(n));
             GridSearch gridSearch = new GridSearch();
             gridSearch.getLocalMinimumArgument(1.0, 10.0, n);
-            series.getData().add(new Data<>("", gridSearch.getScoreFunction().getNumberOfCalls()));
+            series.getData().add(new Data<>("", gridSearch.getObjectiveFunction().getNumberOfCalls()));
             gsDependencyChart.getData().add(series);
         }
 
@@ -163,9 +163,9 @@ public class MainWindowController {
         }
 
         recgsLocalMinimum.setText(localMinimum.toString());
-        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getScoreFunction().getNumberOfCalls()));
+        recgsNumberOfCalls.setText(String.valueOf(gridSearch.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ", " + intervalDivisionsNo + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, (Polynomial) gridSearch.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, recgsFunctionChart, (Polynomial) gridSearch.getObjectiveFunction());
     }
 
     @FXML
@@ -191,9 +191,9 @@ public class MainWindowController {
         }
 
         gssLocalMinimum.setText(localMinimum.toString());
-        gssNumberOfCalls.setText(String.valueOf(gss.getScoreFunction().getNumberOfCalls()));
+        gssNumberOfCalls.setText(String.valueOf(gss.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + leftArgument + ", " + rightArgument + ", " + accuracy + ") = " + localMinimum);
-        populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, (Polynomial) gss.getScoreFunction());
+        populateFunctionChart(leftArgument, rightArgument, gssFunctionChart, (Polynomial) gss.getObjectiveFunction());
     }
 
     @FXML
@@ -209,7 +209,7 @@ public class MainWindowController {
         }
 
         SteepestDescent sd = new SteepestDescent();
-        sd.setScoreFunction(new Paraboloid());
+        sd.setObjectiveFunction(new Paraboloid());
         List<Double> localMinimum = sd.getLocalMinimumArgument(startPoint, !isBacktracked);
         sdResult.setText(String.valueOf(localMinimum));
         sdResultAccuracy.setText(String.valueOf(SteepestDescent.MUTABLE_GRADIENT_CONVERGENCE));
@@ -219,7 +219,7 @@ public class MainWindowController {
         }
 
         sdIterations.setText(String.valueOf(sd.getIterationsNo()));
-        sdFunctionCalls.setText(String.valueOf(sd.getScoreFunction().getNumberOfCalls()));
+        sdFunctionCalls.setText(String.valueOf(sd.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ", backtracking = " + isBacktracked + ") = " + localMinimum);
     }
 

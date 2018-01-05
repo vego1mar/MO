@@ -10,7 +10,6 @@ public strictfp class GoldenSectionSearch extends LocalMinimumSearchAlgorithm {
     /**
      * @throws IllegalArgumentException when 'left' >= 'right'
      */
-    @Override
     public Double getLocalMinimumArgument(double left, double right, double epsilon) {
         if (left >= right) {
             throw new IllegalArgumentException(bundle.getErrorIntervalArgumentsMismatch());
@@ -21,7 +20,7 @@ public strictfp class GoldenSectionSearch extends LocalMinimumSearchAlgorithm {
         Double currentRight = left + GOLDEN_RATIO * (right - left);
 
         while ((right - left) > EPSILON) {
-            if (scoreFunction.getValue(currentLeft) < scoreFunction.getValue(currentRight)) {
+            if (objectiveFunction.getValue(currentLeft) < objectiveFunction.getValue(currentRight)) {
                 right = currentRight;
                 currentRight = currentLeft;
                 currentLeft = right - GOLDEN_RATIO * (right - left);

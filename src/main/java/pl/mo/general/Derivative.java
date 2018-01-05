@@ -1,7 +1,7 @@
 package pl.mo.general;
 
 import org.jetbrains.annotations.Contract;
-import pl.mo.algorithms.ScoreFunction;
+import pl.mo.algorithms.ObjectiveFunction;
 
 public final strictfp class Derivative {
 
@@ -15,7 +15,7 @@ public final strictfp class Derivative {
      * @throws IllegalArgumentException when 'function' is null.
      */
     @Contract("null, _, _ -> fail")
-    public static double compute(ScoreFunction function, double argument, Double epsilon) {
+    public static double compute(ObjectiveFunction function, double argument, Double epsilon) {
         if (function == null) {
             throw new IllegalArgumentException("Argument 'function' is a null.");
         }

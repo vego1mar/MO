@@ -9,12 +9,11 @@ public strictfp class GridSearch extends LocalMinimumSearchAlgorithm {
 
     private final GridSearchBundle bundle = new GridSearchBundle();
 
-    @Override
     public Double getLocalMinimumArgument(double left, double right, double epsilon) {
         final double ACCURACY = Math.abs(epsilon);
 
         for (double x = left + ACCURACY; x <= right; x += ACCURACY) {
-            if (scoreFunction.getValue(x) > scoreFunction.getValue(x - ACCURACY)) {
+            if (objectiveFunction.getValue(x) > objectiveFunction.getValue(x - ACCURACY)) {
                 return x;
             }
         }
@@ -42,7 +41,7 @@ public strictfp class GridSearch extends LocalMinimumSearchAlgorithm {
         for (double i = left; i <= right; i += step) {
             double argument = getLocalMinimumArgument(i, i + step, Math.abs(epsilon), delta);
             arguments.add(argument);
-            values.add(scoreFunction.getValue(argument));
+            values.add(objectiveFunction.getValue(argument));
         }
 
         return arguments.get(values.indexOf(Collections.min(values)));

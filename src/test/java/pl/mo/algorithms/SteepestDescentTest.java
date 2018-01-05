@@ -16,18 +16,12 @@ public class SteepestDescentTest {
 
     private SteepestDescent object = spy(new SteepestDescent());
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void getLocalMinimumArgument1() {
-        // when
-        object.getLocalMinimumArgument(anyDouble(), anyDouble(), anyDouble());
-    }
-
     @Test
     public void getLocalMinimumArgument2() throws IllegalAccessException {
         // given
         final double LOCAL_MINIMUM = (1.0 / 2.0) + (Math.sqrt(11.0 / 3.0) / 2.0);
         Polynomial function = new Polynomial(2.0, -3.0, -4.0, 0.0); // f(x) = 2x^3 - 3x^2 - 4x
-        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, function);
+        ReflectionHelper.getField(object.getClass(), "objectiveFunction").set(object, function);
 
         // when
         double result1 = object.getLocalMinimumArgument(0.0, true);
@@ -46,7 +40,7 @@ public class SteepestDescentTest {
         // given
         final double LOCAL_MINIMUM = 1.0 + Math.sqrt(6.0);
         Polynomial function = new Polynomial(); // f(x) = x^3 - 3x^2 - 15x + 5
-        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, function);
+        ReflectionHelper.getField(object.getClass(), "objectiveFunction").set(object, function);
 
         // when
         double result1 = object.getLocalMinimumArgument(0.0, true);
@@ -65,7 +59,7 @@ public class SteepestDescentTest {
         // given
         final double LOCAL_MINIMUM = (7.0 * Math.sqrt(11.0 / 3.0)) / 3.0;
         Polynomial function = new Polynomial(1.0, -((14.0 / 3.0) * Math.sqrt(11.0 / 3.0)), 121.0 / 9.0); // f(x) = x^2 - (14/3)√(11/3)x + (121/9)
-        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, function);
+        ReflectionHelper.getField(object.getClass(), "objectiveFunction").set(object, function);
 
         // when
         double result1 = object.getLocalMinimumArgument(0.0, true);
@@ -83,7 +77,7 @@ public class SteepestDescentTest {
     public void getLocalMinimumArgument5() throws IllegalAccessException {
         // given
         Paraboloid paraboloid = new Paraboloid();
-        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, paraboloid);
+        ReflectionHelper.getField(object.getClass(), "objectiveFunction").set(object, paraboloid);
 
         // when
         List<Double> localMinimum1 = object.getLocalMinimumArgument(Arrays.asList(5.0, 5.0), false);
@@ -103,7 +97,7 @@ public class SteepestDescentTest {
         final double G = 3.0 / 2.0;
         final double C = Math.log(3.0 * Math.sqrt(7.0));
         Paraboloid paraboloid = new Paraboloid(A,1.0, F, B,1.0, G,C);
-        ReflectionHelper.getField(object.getClass(), "scoreFunction").set(object, paraboloid);
+        ReflectionHelper.getField(object.getClass(), "objectiveFunction").set(object, paraboloid);
         final List<Double> expectedLocalMinimum = Arrays.asList(2.0 / 3.0, -3.0 / 2.0);
 
         // when
