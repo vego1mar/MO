@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.1
 Main-Class: pl.mo.window.MainWindow
 
 Name: pl/mo
@@ -6,4 +6,4 @@ Sealed: true
 
 Name: pl/mo
 Specification-Title: "Optimization methods"
-Specification-Version: 1.0
+Specification-Version: 1.1

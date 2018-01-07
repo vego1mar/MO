@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import pl.mo.algorithms.GoldenSectionSearch;
 import pl.mo.algorithms.HookeJeevesPatternSearch;
+import pl.mo.algorithms.SimulatedAnnealing;
 import pl.mo.functions.Paraboloid;
 import pl.mo.functions.Polynomial;
 import pl.mo.algorithms.SteepestDescent;
@@ -65,6 +66,18 @@ public class MainWindowController {
     @FXML private TextField hjResult;
     @FXML private TextField hjIterations;
     @FXML private TextField hjFunctionCalls;
+
+    @FXML private TextField saStartPointX;
+    @FXML private TextField saStartPointY;
+    @FXML private TextField saBoundXLeft;
+    @FXML private TextField saBoundXRight;
+    @FXML private TextField saBoundYLeft;
+    @FXML private TextField saBoundYRight;
+    @FXML private TextField saAnnealingThreshold;
+    @FXML private TextField saCoolingFactor;
+    @FXML private TextField saResult;
+    @FXML private TextField saIterations;
+    @FXML private TextField saFunctionCalls;
 
     @FXML
     private void populateFunctionChart(Double left, Double right, LineChart<Double, Double> lineChart, Polynomial scoreFunction) {
@@ -117,7 +130,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void countUserDefinedGridSearchLocalMinimum() {
+    private void countMinimumUsingGridSearch() {
         Double leftArgument = PrimitivesHelper.getDouble(gsLeftArgument.getText());
         Double rightArgument = PrimitivesHelper.getDouble(gsRightArgument.getText());
         Double accuracy = PrimitivesHelper.getDouble(gsAccuracy.getText());
@@ -143,7 +156,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void countUserDefinedRecursiveGridSearchLocalMinimum() {
+    private void countMinimumUsingRecursiveGridSearch() {
         Double leftArgument = PrimitivesHelper.getDouble(recgsLeftArgument.getText());
         Double rightArgument = PrimitivesHelper.getDouble(recgsRightArgument.getText());
         Double accuracy = PrimitivesHelper.getDouble(recgsAccuracy.getText());
@@ -176,7 +189,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void countUserDefinedGoldenSectionSearchLocalMinimum() {
+    private void countMinimumUsingGoldenSectionSearch() {
         Double leftArgument = PrimitivesHelper.getDouble(gssLeftArgument.getText());
         Double rightArgument = PrimitivesHelper.getDouble(gssRightArgument.getText());
         Double accuracy = PrimitivesHelper.getDouble(gssAccuracy.getText());
@@ -204,7 +217,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void countUserDefinedSteepestDescentLocalMinimum() {
+    private void countMinimumUsingSteepestDescent() {
         Double startPointX = PrimitivesHelper.getDouble(sdStartPointX.getText());
         Double startPointY = PrimitivesHelper.getDouble(sdStartPointY.getText());
 
@@ -232,7 +245,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void countUserDefinedHookeJeevesPatternSearchLocalMinimum() {
+    private void countMinimumUsingHookeJeevesPatternSearch() {
         Double startPointX = PrimitivesHelper.getDouble(hjStartPointX.getText());
         Double startPointY = PrimitivesHelper.getDouble(hjStartPointY.getText());
 
@@ -258,6 +271,58 @@ public class MainWindowController {
         hjIterations.setText(String.valueOf(hj.getIterationsNo()));
         hjFunctionCalls.setText(String.valueOf(hj.getObjectiveFunction().getNumberOfCalls()));
         log.info(ReflectionHelper.getCurrentMethodName() + "(" + startPoint + ") = " + localMinimum);
+    }
+
+    @FXML
+    private void countMinimumUsingSimulatedAnnealing() {
+        Double startPointX = PrimitivesHelper.getDouble(saStartPointX.getText());
+        Double startPointY = PrimitivesHelper.getDouble(saStartPointY.getText());
+        Double xLeftBound = PrimitivesHelper.getDouble(saBoundXLeft.getText());
+        Double xRightBound = PrimitivesHelper.getDouble(saBoundXRight.getText());
+        Double yLeftBound = PrimitivesHelper.getDouble(saBoundYLeft.getText());
+        Double yRightBound = PrimitivesHelper.getDouble(saBoundYRight.getText());
+        Integer threshold = PrimitivesHelper.getInteger(saAnnealingThreshold.getText());
+        Double coolingFactor = PrimitivesHelper.getDouble(saCoolingFactor.getText());
+        Alert alert = new Alert(AlertType.ERROR, bundle.getTextImproperValue() + System.lineSeparator() + PrimitivesHelper.getErrorMessage());
+
+        if (startPointX == null || startPointY == null) {
+            alert.showAndWait();
+            return;
+        }
+
+        if (xLeftBound == null || xRightBound == null || yLeftBound == null || yRightBound == null) {
+            alert.showAndWait();
+            return;
+        }
+
+        if (threshold == null || coolingFactor == null) {
+            alert.showAndWait();
+            return;
+        }
+
+        List<Double> startPoint = List.of(startPointX, startPointY);
+        SimulatedAnnealing annealing = new SimulatedAnnealing();
+        List<Double> minimum;
+
+        try {
+            annealing.setObjectiveFunction(new Paraboloid());
+            annealing.setAnnealingThreshold(threshold);
+            annealing.setTemperatureCoolingFactor(coolingFactor);
+            SimulatedAnnealing.IntervalConstraints bounds = annealing.new IntervalConstraints();
+            bounds.setX(xLeftBound, xRightBound);
+            bounds.setY(yLeftBound, yRightBound);
+            minimum = annealing.getLocalMinimumArgument(startPoint, bounds);
+        } catch (IllegalArgumentException | NullPointerException ex) {
+            log.error(ex.toString());
+            new Alert(AlertType.ERROR, ex.getMessage()).showAndWait();
+            return;
+        }
+
+        saResult.setText(String.valueOf(minimum));
+        saIterations.setText(String.valueOf(annealing.getIterationsNo()));
+        saFunctionCalls.setText(String.valueOf(annealing.getObjectiveFunction().getNumberOfCalls()));
+        String boundsString = "[(" + xLeftBound + ", " + xRightBound + "), (" + yLeftBound + ", " + yRightBound + ")]";
+        log.info(ReflectionHelper.getCurrentMethodName() + "(SP=" + startPoint + ", B=" + boundsString + ", L=" + threshold + ", CF=" + coolingFactor + ") = " + minimum);
     }
 
 }

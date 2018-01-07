@@ -110,10 +110,6 @@ public class SimulatedAnnealing extends LocalMinimumSearchAlgorithm {
         return Math.exp(-vars.costSubtraction / vars.temperature);
     }
 
-    public double getTemperatureCoolingFactor() {
-        return temperatureCoolingFactor;
-    }
-
     public void setTemperatureCoolingFactor(double temperatureCoolingFactor) {
         if (temperatureCoolingFactor > 0.0 && temperatureCoolingFactor < 1.0) {
             this.temperatureCoolingFactor = temperatureCoolingFactor;
@@ -121,10 +117,6 @@ public class SimulatedAnnealing extends LocalMinimumSearchAlgorithm {
         }
 
         throw new IllegalArgumentException(bundle.getErrorTemperatureCoolingFactor());
-    }
-
-    public int getAnnealingThreshold() {
-        return annealingThreshold;
     }
 
     public void setAnnealingThreshold(int annealingThreshold) {
