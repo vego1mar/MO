@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pl.mo.strings.VectorsBundle;
 
-public strictfp class Vectors {
+public final strictfp class Vectors {
 
     private static final Logger log = Logger.getLogger(Vectors.class);
     private static final VectorsBundle bundle = new VectorsBundle();
